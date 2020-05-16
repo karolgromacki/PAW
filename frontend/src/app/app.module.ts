@@ -2,14 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { MainComponent } from './main/main.component';
-import { BookComponent } from './book/book.component';
-import { BasketComponent } from './basket/basket.component';
+import { MainComponent } from './components/main/main.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +16,7 @@ import { BasketComponent } from './basket/basket.component';
     PageNotFoundComponent,
     FooterComponent,
     MainComponent,
-    BookComponent,
-    BasketComponent
+    routingComponents
   ],
   imports: [
     BrowserModule,
