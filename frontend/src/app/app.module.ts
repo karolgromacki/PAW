@@ -7,13 +7,19 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MainComponent } from './main/main.component';
+import { BookComponent } from './book/book.component';
+import { BasketComponent } from './basket/basket.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     PageNotFoundComponent,
-    FooterComponent
+    FooterComponent,
+    MainComponent,
+    BookComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,
