@@ -8,7 +8,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 export class MainComponent implements OnInit {
   CAROUSEL_BREAKPOINT = 768;
   carouselDisplayMode = 'multiple';
-  buttonText="Do koszyka";
+  buttonText = "Do koszyka";
   cards = [
     {
       title: 'Card Title 1',
@@ -23,7 +23,7 @@ export class MainComponent implements OnInit {
       img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
     },
     {
-      title: 'Card Title 4', 
+      title: 'Card Title 4',
       img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
     },
     {
