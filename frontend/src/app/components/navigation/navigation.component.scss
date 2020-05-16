@@ -1,0 +1,13 @@
+.nav-item {
+    &::after {
+      content: "";
+      display: block;
+      width: 0px;
+      height: 2px;
+      background: white;
+      transition: 0.2s;
+    }
+    &:hover::after {
+      width: 100%;
+    }
+  }
