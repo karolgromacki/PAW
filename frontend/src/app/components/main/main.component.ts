@@ -11,40 +11,40 @@ export class MainComponent implements OnInit {
   buttonText = "Do koszyka";
   cards = [
     {
-      title: 'Card Title 1',
-      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
+      title: '31,04zł',
+      img: '../../../assets/img/witcher.jpg'
     },
     {
-      title: 'Card Title 2',
-      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
+      title: '31,04zł',
+      img: '../../../assets/img/witcher.jpg'
     },
     {
-      title: 'Card Title 3',
-      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
+      title: '31,04zł',
+      img: '../../../assets/img/witcher.jpg'
     },
     {
-      title: 'Card Title 4',
-      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
+      title: '31,04zł',
+      img: '../../../assets/img/witcher.jpg'
     },
     {
-      title: 'Card Title 5',
-      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
+      title: '31,04zł',
+      img: '../../../assets/img/witcher.jpg'
     },
     {
-      title: 'Card Title 6',
-      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
+      title: '31,04zł',
+      img: '../../../assets/img/witcher.jpg'
     },
     {
-      title: 'Card Title 7',
-      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
+      title: '31,04zł',
+      img: '../../../assets/img/witcher.jpg'
     },
     {
-      title: 'Card Title 8',
-      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
+      title: '31,04zł',
+      img: '../../../assets/img/witcher.jpg'
     },
     {
-      title: 'Card Title 9',
-      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
+      title: '31,04zł',
+      img: '../../../assets/img/witcher.jpg'
     },
   ];
   slides: any = [[]];
