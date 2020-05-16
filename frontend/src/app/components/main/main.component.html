@@ -1,1 +1,86 @@
-<p>main works!</p>
+<div class="text-dark col-lg-8 offset-lg-2">
+  <div class="my-5">
+    <h1 class="text-center">Nowości</h1>
+    <mdb-carousel [animation]="'slide'">
+      <mdb-carousel-item *ngFor="let item of slides; let i = index">
+        <div
+          class="col-12 col-sm-6 col-md-4 col-lg-3"
+          *ngFor="let card of item; let cardIndex = index"
+        >
+          <mdb-card class="my-1 bg-dark text-light">
+            <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img>
+            <mdb-card-body>
+              <mdb-card-title>
+                <h4>{{ card.title }}</h4>
+              </mdb-card-title>
+              <p>{{ card.description }}</p>
+              <a
+                href="#"
+                color="primary"
+                class="waves-light mb-5"
+                mdbWavesEffect
+                >{{ buttonText }}</a
+              >
+            </mdb-card-body>
+          </mdb-card>
+        </div>
+      </mdb-carousel-item>
+    </mdb-carousel>
+  </div>
+  <div class="my-5">
+    <h1 class="text-center">Bestsellery</h1>
+    <mdb-carousel [animation]="'slide'">
+      <mdb-carousel-item *ngFor="let item of slides; let i = index">
+        <div
+          class="col-12 col-sm-6 col-md-4 col-lg-3"
+          *ngFor="let card of item; let cardIndex = index"
+        >
+          <mdb-card class="my-1 bg-dark text-light">
+            <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img>
+            <mdb-card-body>
+              <mdb-card-title>
+                <h4>{{ card.title }}</h4>
+              </mdb-card-title>
+              <a
+                href="#"
+                mdbBtn
+                color="primary"
+                class="waves-light mb-5"
+                mdbWavesEffect
+                >{{ buttonText }}</a
+              >
+            </mdb-card-body>
+          </mdb-card>
+        </div>
+      </mdb-carousel-item>
+    </mdb-carousel>
+  </div>
+  <div class="my-5">
+    <h1 class="text-center">Promocje</h1>
+    <mdb-carousel [animation]="'slide'">
+      <mdb-carousel-item *ngFor="let item of slides; let i = index">
+        <div
+          class="col-12 col-sm-6 col-md-4 col-lg-3"
+          *ngFor="let card of item; let cardIndex = index"
+        >
+          <mdb-card class="my-1 bg-dark text-light">
+            <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img>
+            <mdb-card-body>
+              <mdb-card-title>
+                <h4>{{ card.title }}</h4>
+              </mdb-card-title>
+              <a
+                href="#"
+                mdbBtn
+                color="primary"
+                class="waves-light mb-5"
+                mdbWavesEffect
+                >{{ buttonText }}</a
+              >
+            </mdb-card-body>
+          </mdb-card>
+        </div>
+      </mdb-carousel-item>
+    </mdb-carousel>
+  </div>
+</div>
