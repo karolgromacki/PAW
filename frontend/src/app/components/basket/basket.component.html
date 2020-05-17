@@ -1,1 +1,89 @@
-<p>basket works!</p>
+<div class="card">
+  <h3
+    class="text-dark card-header text-center font-weight-bold text-uppercase py-4"
+  >
+    Koszyk
+  </h3>
+  <div class="card-body">
+    <div id="table" class="table-editable">
+      <span class="table-add float-right mb-3 mr-2">
+        <a class="text-success" (click)="add()">
+          <mdb-icon fas icon="plus" size="2x"></mdb-icon>
+        </a>
+      </span>
+      <table
+        responsive="true"
+        small="true"
+        striped="true"
+        class="table table-bordered table-responsive-md table-striped text-center"
+      >
+        <thead class="black white-text">
+          <tr>
+            <th class="text-center">Author</th>
+            <th class="text-center">Title</th>
+            <th class="text-center">Price</th>
+            <th class="text-center">Quantity</th>
+            <th class="text-center">Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of bookList; let id = index">
+            <td>
+              <span
+                (keyup)="changeValue(id, 'name', $event)"
+                (blur)="updateList(id, 'name', $event)"
+                contenteditable="true"
+                >{{ book.author }}</span
+              >
+            </td>
+            <td>
+              <span
+                contenteditable="true"
+                (keyup)="changeValue(id, 'title', $event)"
+                (blur)="updateList(id, 'title', $event)"
+                >{{ book.title }}</span
+              >
+            </td>
+            <td>
+              <span
+                contenteditable="true"
+                (keyup)="changeValue(id, 'companyName', $event)"
+                (blur)="updateList(id, 'companyName', $event)"
+                >{{ book.price }}</span
+              >
+            </td>
+            <td>
+              <span
+                contenteditable="true"
+                (keyup)="changeValue(id, 'country', $event)"
+                (blur)="updateList(id, 'country', $event)"
+                >{{ book.quantity }}</span
+              >
+            </td>
+            <td>
+              <span class="table-remove">
+                <button
+                  type="button"
+                  mdbBtn
+                  color="danger"
+                  rounded="true"
+                  size="sm"
+                  class="my-0 py-1 px-2"
+                  (click)="remove(id)"
+                >
+                  x
+                </button>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="border">
+    <div class="text-dark col-3 offset-9 my-4">
+      Razem: bardzo dużo
+      <button type="button" mdbBtn color="dark" mdbWavesEffect>Zapłać</button>
+    </div>
+  </div>
+</div>
