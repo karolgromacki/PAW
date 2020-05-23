@@ -27,7 +27,7 @@ public class Product extends BaseEntity {
     @NotBlank
     private String author;
 
-    @ManyToMany(mappedBy = "product")
+    @ManyToMany(mappedBy = "products")
     private List<Basket> baskets;
 
     public Product() {

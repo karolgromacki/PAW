@@ -26,7 +26,7 @@ public class Payment extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)
     private Client client;
 
-    @OneToOne
+    @OneToOne(mappedBy = "payment")
     private Order order;
 
     public Payment() {

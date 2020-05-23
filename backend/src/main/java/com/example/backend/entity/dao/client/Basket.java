@@ -24,7 +24,8 @@ public class Basket extends BaseEntity {
                     name = "products_id", referencedColumnName = "id"))
     private List<Product> products;
 
-    @OneToOne(mappedBy = "basket", fetch = FetchType.LAZY)
+
+    @OneToOne(mappedBy = "basket")
     private Order order;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)

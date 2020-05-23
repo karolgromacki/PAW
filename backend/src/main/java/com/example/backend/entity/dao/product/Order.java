@@ -4,9 +4,7 @@ import com.example.backend.entity.dao.BaseEntity;
 import com.example.backend.entity.dao.client.Basket;
 import com.example.backend.entity.dao.client.Payment;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 /*
@@ -18,10 +16,12 @@ public class Order extends BaseEntity {
 
     private Date date;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "basket_id", referencedColumnName = "id")
     private Basket basket;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "payment_id", referencedColumnName = "id")
     private Payment payment;
 
     public Order() {
