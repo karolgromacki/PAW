@@ -14,7 +14,6 @@ import java.util.List;
 */
 @RestController
 @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-
 public class OrderController {
     private OrderService orderService;
 
@@ -23,39 +22,30 @@ public class OrderController {
     }
 
     @GetMapping(value = "/orders")
-    public ResponseEntity<List<OrderDto>> getProductList() {
+    public ResponseEntity<List<OrderDto>> getOrdersList() {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(orderService.getAllOrders());
     }
 
     @GetMapping(value = "/orders/{basketId}")
-    public ResponseEntity<List<OrderDto>> getProductListByBasketId(@PathVariable Long basketId) {
+    public ResponseEntity<List<OrderDto>> getOrdersListByBasketId(@PathVariable Long basketId) {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(orderService.getOrderByBasketId(basketId));
     }
 
     @PostMapping(value = "/orders")
-    public ResponseEntity<OrderDto> createProduct(@RequestBody OrderDto orderDto) {
+    public ResponseEntity<OrderDto> createOrder(@RequestBody OrderDto orderDto) {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(orderService.createOrder(orderDto));
     }
 
     @PutMapping(value = "/orders")
-    public ResponseEntity<OrderDto> updateProduct(@RequestBody OrderDto orderDto) {
+    public ResponseEntity<OrderDto> updateOrder(@RequestBody OrderDto orderDto) {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(orderService.updateOrder(orderDto));
     }
-
-    @DeleteMapping(value = "/orders/{id}")
-    public ResponseEntity<Void> deleteImage(@PathVariable Long id) {
-        orderService.deleteOrder(id);
-        return ResponseEntity
-                .status(HttpStatus.ACCEPTED)
-                .build();
-    }
-
 }
