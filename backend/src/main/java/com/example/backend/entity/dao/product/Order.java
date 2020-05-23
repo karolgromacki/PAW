@@ -11,7 +11,7 @@ import java.util.Date;
     @author Kacper Buczak 
 */
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 public class Order extends BaseEntity {
 
     private Date date;

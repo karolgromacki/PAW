@@ -13,7 +13,7 @@ import java.util.List;
     @author Kacper Buczak 
 */
 @Entity
-@Table(name = "product")
+@Table(name = "products")
 public class Product extends BaseEntity {
 
     private String productName;

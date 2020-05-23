@@ -12,7 +12,7 @@ import java.util.Date;
     @author Kacper Buczak 
 */
 @Entity
-@Table(name = "payment")
+@Table(name = "payments")
 public class Payment extends BaseEntity {
 
     @Min(value = 0)

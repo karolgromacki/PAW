@@ -15,7 +15,7 @@ import java.util.List;
     @author Kacper Buczak 
 */
 @Entity
-@Table(name = "client")
+@Table(name = "clients")
 public class Client extends BaseEntity {
 
     @NotBlank

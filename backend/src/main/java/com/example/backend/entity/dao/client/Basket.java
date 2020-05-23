@@ -11,7 +11,7 @@ import java.util.List;
     @author Kacper Buczak 
 */
 @Entity
-@Table(name = "basket")
+@Table(name = "baskets")
 public class Basket extends BaseEntity {
     private Long totalAmmount;
 
