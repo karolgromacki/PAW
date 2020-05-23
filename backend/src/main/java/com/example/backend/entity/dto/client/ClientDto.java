@@ -1,7 +1,13 @@
 package com.example.backend.entity.dto.client;
 
+import com.example.backend.entity.dao.client.Basket;
+import com.example.backend.entity.dao.client.Payment;
 import com.example.backend.entity.dto.BaseDto;
 
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 /*
@@ -13,9 +19,9 @@ public class ClientDto extends BaseDto {
     private String email;
     private String Address;
     private String phoneNumber;
+    private String login;
+    private String password;
     private String NIP;
-    private List<BasketDto> baskets;
-    private List<PaymentShortDto> payments;
 
     public ClientDto() {
     }
@@ -60,27 +66,27 @@ public class ClientDto extends BaseDto {
         this.phoneNumber = phoneNumber;
     }
 
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getNIP() {
         return NIP;
     }
 
     public void setNIP(String NIP) {
         this.NIP = NIP;
-    }
-
-    public List<BasketDto> getBaskets() {
-        return baskets;
-    }
-
-    public void setBaskets(List<BasketDto> baskets) {
-        this.baskets = baskets;
-    }
-
-    public List<PaymentShortDto> getPayments() {
-        return payments;
-    }
-
-    public void setPayments(List<PaymentShortDto> payments) {
-        this.payments = payments;
     }
 }
