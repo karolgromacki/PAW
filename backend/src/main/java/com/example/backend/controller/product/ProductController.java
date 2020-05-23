@@ -51,4 +51,12 @@ public class ProductController {
                 .status(HttpStatus.NOT_IMPLEMENTED)
                 .body(null);
     }
+
+    @DeleteMapping(value = "/products/{id}")
+    public ResponseEntity<Void> deleteImage(@PathVariable Long id) {
+        productService.deleteProduct(id);
+        return ResponseEntity
+                .status(HttpStatus.ACCEPTED)
+                .build();
+    }
 }
