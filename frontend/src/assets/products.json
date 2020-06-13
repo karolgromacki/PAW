@@ -1,0 +1,7 @@
+[
+    { "id": 1, "author": "Andrzej Sapkowski", "category": "Fantastyka", "description":"elo","image":"https://ecsmedia.pl/c/ostatnie-zyczenie-wiedzmin-tom-1-b-iext34567993.jpg", "price":31, "product_name":"Ostatnie Życzenie" },
+    { "id": 2, "author": "Andrzej Sapkowski", "category": "Fantastyka", "description":"elo","image":"https://ecsmedia.pl/c/miecz-przeznaczenia-wiedzmin-tom-2-b-iext44042861.jpg", "price":31, "product_name":"Miecz Przeznaczenia" },
+    { "id": 3, "author": "Andrzej Sapkowski", "category": "Fantastyka", "description":"elo","image":"https://ecsmedia.pl/c/krew-elfow-wiedzmin-tom-3-b-iext44042268.jpg", "price":31, "product_name":"Krew Elfów" },
+    { "id": 4, "author": "Andrzej Sapkowski", "category": "Fantastyka", "description":"elo","image":"https://ecsmedia.pl/c/czas-pogardy-wiedzmin-tom-4-b-iext44035949.jpg", "price":31, "product_name":"Czas Pogardy" },
+    { "id": 5, "author": "Andrzej Sapkowski", "category": "Fantastyka", "description":"elo","image":"https://ecsmedia.pl/c/chrzest-ognia-wiedzmin-tom-5-b-iext44036289.jpg", "price":31, "product_name":"Chrzest Ognia" }
+]
