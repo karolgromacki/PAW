@@ -1,14 +1,2 @@
-INSERT INTO products (id, author, category, description, image, price, product_name) VALUES
-(0, 'Andrzej Sapkowski',1, 'Fantastyka', 1, 31.3, 'Ostatnie Życzenie')
-,(1, 'Andrzej Sapkowski',1, 'Fantastyka', 1, 31.3, 'Ostatnie Życzenie')
-,(2, 'Andrzej Sapkowski',1, 'Fantastyka', 2, 32.3, 'Miecz Przeznaczenia')
-,(3, 'Andrzej Sapkowski',1, 'Fantastyka', 3, 33.3, 'Krew Elfów')
-,(4, 'Andrzej Sapkowski',1, 'Fantastyka', 4, 34.3, 'Czas Pogardy')
-,(5, 'Andrzej Sapkowski',1, 'Fantastyka', 5, 35.3, 'Chrzest Ognia')
-,(6, 'Andrzej Sapkowski',1, 'Fantastyka', 6, 36.3, 'Wieża Jaskółki')
-,(7, 'Andrzej Sapkowski',1, 'Fantastyka', 7, 37.3, 'Pani Jeziora')
-,(8, 'Andrzej Sapkowski',1, 'Fantastyka', 8, 38.3, 'Sezon Burz')
-,(9, 'Różni',1, 'description', 9, 32, 'Szpony i Kły');
---
---
---SELECT setval('products_id_seq', max(id))FROM products;
+INSERT INTO products (id, author, category, description, image_url, price, product_name)  VALUES (1, 'Andrzej Sapkowski', 1, 'Fantastyka',  'https://cf2-taniaksiazka.statiki.pl/images/popups/123/68007901377KS.jpg', 31.3, 'Ostatnie Życzenie'),  (2, 'Andrzej Sapkowski', 1, 'Fantastyka',  'https://cf2-taniaksiazka.statiki.pl/images/popups/123/68007901377KS.jpg', 32.3, 'Miecz Przeznaczenia'),  (3, 'Andrzej Sapkowski', 1, 'Fantastyka',  'https://cf2-taniaksiazka.statiki.pl/images/popups/123/68007901377KS.jpg', 33.3, 'Krew Elfów'),  (4, 'Andrzej Sapkowski', 1, 'Fantastyka',  'https://cf2-taniaksiazka.statiki.pl/images/popups/123/68007901377KS.jpg', 34.3, 'Czas Pogardy'),  (5, 'Andrzej Sapkowski', 1, 'Fantastyka',  'https://cf2-taniaksiazka.statiki.pl/images/popups/123/68007901377KS.jpg', 35.3, 'Chrzest Ognia'),  (6, 'Andrzej Sapkowski', 1, 'Fantastyka',  'https://cf2-taniaksiazka.statiki.pl/images/popups/123/68007901377KS.jpg', 36.3, 'Wieża Jaskółki'),  (7, 'Andrzej Sapkowski', 1, 'Fantastyka',  'https://cf2-taniaksiazka.statiki.pl/images/popups/123/68007901377KS.jpg', 37.3, 'Pani Jeziora'),  (8, 'Andrzej Sapkowski', 1, 'Fantastyka',  'https://cf2-taniaksiazka.statiki.pl/images/popups/123/68007901377KS.jpg', 38.3, 'Sezon Burz'),  (9, 'Różni', 1, 'description', 'https://cf2-taniaksiazka.statiki.pl/images/popups/123/68007901377KS.jpg', 32,  'Szpony i Kły'),  (10, 'Andrzej Sapkowski', 1, 'Fantastyka',  'https://cf2-taniaksiazka.statiki.pl/images/popups/123/68007901377KS.jpg', 31.3, 'Ostatnie Życzenie');
+SELECT setval('products_id_seq', max(id))  FROM products;

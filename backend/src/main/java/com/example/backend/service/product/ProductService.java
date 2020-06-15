@@ -37,7 +37,7 @@ public class ProductService {
         product.setDescription(productDto.getDescription());
         product.setPrice(productDto.getPrice());
         product.setProductName(productDto.getProductName());
-        product.setImage(null);
+        product.setImageUrl(productDto.getImageUrl());
         product.setBaskets(null);
 
         return this.entityToSimpleDTO(productRepository.save(product));
@@ -50,7 +50,7 @@ public class ProductService {
         product.setDescription(productDto.getDescription());
         product.setPrice(productDto.getPrice());
         product.setProductName(productDto.getProductName());
-        product.setImage(null);
+        product.setImageUrl(productDto.getImageUrl());
         product.setBaskets(null);
 
         return this.entityToSimpleDTO(productRepository.save(product));

@@ -4,7 +4,10 @@ import com.example.backend.entity.dao.BaseEntity;
 import com.example.backend.entity.dao.client.Basket;
 import com.example.backend.entity.dao.enums.Category;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
@@ -20,8 +23,7 @@ public class Product extends BaseEntity {
     @Min(value = 0)
     private Long price;
     private String description;
-    @Lob
-    private Byte[] image;
+    private String imageUrl;
     @Enumerated
     private Category category;
     @NotBlank
@@ -57,12 +59,12 @@ public class Product extends BaseEntity {
         this.description = description;
     }
 
-    public Byte[] getImage() {
-        return image;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImage(Byte[] image) {
-        this.image = image;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public Category getCategory() {

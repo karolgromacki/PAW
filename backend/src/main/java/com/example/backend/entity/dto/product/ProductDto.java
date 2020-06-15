@@ -12,6 +12,7 @@ public class ProductDto extends BaseDto {
     private String description;
     private Category category;
     private String author;
+    private String imageUrl;
 
     public ProductDto() {
     }
@@ -54,5 +55,13 @@ public class ProductDto extends BaseDto {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
