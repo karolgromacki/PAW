@@ -23,7 +23,7 @@
       <mdb-carousel-item *ngFor="let item of slides; let i = index">
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5" *ngFor="let product of products; let cardIndex = index">
           <mdb-card class="my-1 bg-dark text-light">
-            <mdb-card-img routerLink="/book" src="{{product.imageUrl}}" alt="Card image cap"></mdb-card-img>
+            <mdb-card-img routerLink="/product/{{product.id}}" src="{{product.imageUrl}}" alt="Card image cap"></mdb-card-img>
             <mdb-card-body class="text-center">
               <mdb-card-title>
                 <h4>{{ product.price | currency:'PLN '}}</h4>
