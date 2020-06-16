@@ -30,6 +30,13 @@ public class ProductController {
                 .body(productService.getProductList());
     }
 
+    @GetMapping(value = "/products/{id}")
+    public ResponseEntity<ProductDto> getProductByProductId(@PathVariable Long id) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(productService.getProductById(id));
+    }
+
     @PostMapping(value = "/products")
     public ResponseEntity<ProductDto> createProduct(@RequestBody ProductDto productDto) {
         return ResponseEntity
@@ -46,7 +53,6 @@ public class ProductController {
 
     @PutMapping(value = "/products/{id}")
     public ResponseEntity<List<ProductDto>> updateProductImage() {
-        // TODO Implement image upload
         return ResponseEntity
                 .status(HttpStatus.NOT_IMPLEMENTED)
                 .body(null);

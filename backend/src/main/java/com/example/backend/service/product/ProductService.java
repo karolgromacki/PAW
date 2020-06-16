@@ -30,6 +30,11 @@ public class ProductService {
                 .collect(Collectors.toList());
     }
 
+
+    public ProductDto getProductById(Long id) {
+        return this.entityToSimpleDTO(productRepository.getOne(id));
+    }
+
     public ProductDto createProduct(ProductDto productDto) {
         Product product = new Product();
         product.setAuthor(productDto.getAuthor());
