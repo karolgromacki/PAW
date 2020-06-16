@@ -8,12 +8,15 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { FooterComponent } from './components/footer/footer.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     FooterComponent,
     routingComponents,
+
+
   ],
   imports: [
     BrowserModule,
