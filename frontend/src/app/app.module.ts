@@ -5,18 +5,15 @@ import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { MainComponent } from './components/main/main.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    PageNotFoundComponent,
     FooterComponent,
-    MainComponent,
-    routingComponents
+    routingComponents,
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,7 @@ import com.example.backend.entity.dto.BaseDto;
 */
 public class ProductDto extends BaseDto {
     private String productName;
-    private Long price;
+    private Double price;
     private String description;
     private Category category;
     private String author;
@@ -25,11 +25,11 @@ public class ProductDto extends BaseDto {
         this.productName = productName;
     }
 
-    public Long getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

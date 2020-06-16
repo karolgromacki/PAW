@@ -7,7 +7,7 @@ import { IProducts } from '../interfaces/Products';
   providedIn: 'root'
 })
 export class DBUtilsService {
-  private productsUrl = '/assets/products.json';
+  private productsUrl = 'http://localhost:8080/products';
   constructor(private http: HttpClient) {
   }
 

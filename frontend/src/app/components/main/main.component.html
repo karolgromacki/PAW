@@ -3,24 +3,14 @@
     <h1 class="text-center">Nowości</h1>
     <mdb-carousel class="mt-5" [animation]="'slide'">
       <mdb-carousel-item *ngFor="let item of slides; let i = index">
-        <div
-          class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5"
-          *ngFor="let card of item; let cardIndex = index"
-        >
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5" *ngFor="let card of item; let cardIndex = index">
           <mdb-card class="my-1 bg-dark text-light">
             <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img>
             <mdb-card-body class="text-center">
               <mdb-card-title>
                 <h4>{{ card.title }}</h4>
               </mdb-card-title>
-              <a
-                href="#"
-                mdbBtn
-                color="light"
-                class="waves-light"
-                mdbWavesEffect
-                >{{ buttonText }}</a
-              >
+              <a href="#" mdbBtn color="light" class="waves-light" mdbWavesEffect>{{ buttonText }}</a>
             </mdb-card-body>
           </mdb-card>
         </div>
@@ -31,29 +21,16 @@
     <h1 class="text-center">Bestsellery</h1>
     <mdb-carousel class="mt-5" [animation]="'slide'">
       <mdb-carousel-item *ngFor="let item of slides; let i = index">
-        <div
-          class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5"
-          *ngFor="let product of products; let cardIndex = index"
-        ><div *ngIf="product.category=='Fantastyka'; then thenBlock;"></div>
-        <ng-template #thenBlock>
-
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5" *ngFor="let product of products; let cardIndex = index">
           <mdb-card class="my-1 bg-dark text-light">
-            <mdb-card-img [src]="product.image" alt="Card image cap"></mdb-card-img>
+            <mdb-card-img routerLink="/book" src="{{product.imageUrl}}" alt="Card image cap"></mdb-card-img>
             <mdb-card-body class="text-center">
               <mdb-card-title>
-                <h4>{{ product.price }}</h4>
+                <h4>{{ product.price | currency:'PLN '}}</h4>
               </mdb-card-title>
-              <a
-                href="#"
-                mdbBtn
-                color="light"
-                class="waves-light"
-                mdbWavesEffect
-                >{{ buttonText }}</a
-              >
+              <a href="#" mdbBtn color="light" class="waves-light" mdbWavesEffect>{{ buttonText }}</a>
             </mdb-card-body>
           </mdb-card>
-        </ng-template>
         </div>
       </mdb-carousel-item>
     </mdb-carousel>
@@ -62,24 +39,14 @@
     <h1 class="text-center">Promocje</h1>
     <mdb-carousel class="mt-5" [animation]="'slide'">
       <mdb-carousel-item *ngFor="let item of slides; let i = index">
-        <div
-          class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5"
-          *ngFor="let product of products; let cardIndex = index"
-        >
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5" *ngFor="let product of products; let cardIndex = index">
           <mdb-card class="my-1 bg-dark text-light">
-            <mdb-card-img [src]="product.image" alt="Card image cap"></mdb-card-img>
+            <mdb-card-img src="{{product.imageUrl}}" alt="Card image cap"></mdb-card-img>
             <mdb-card-body class="text-center">
               <mdb-card-title>
-                <h4>{{ product.price }}</h4>
+                <h4>{{ product.price | currency:'PLN '}}</h4>
               </mdb-card-title>
-              <a
-                href="#"
-                mdbBtn
-                color="light"
-                class="waves-light"
-                mdbWavesEffect
-                >{{ buttonText }}</a
-              >
+              <a href="#" mdbBtn color="light" class="waves-light" mdbWavesEffect>{{ buttonText }}</a>
             </mdb-card-body>
           </mdb-card>
         </div>
