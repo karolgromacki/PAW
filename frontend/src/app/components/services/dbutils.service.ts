@@ -8,10 +8,14 @@ import { IProducts } from '../interfaces/Products';
 })
 export class DBUtilsService {
   private productsUrl = 'http://localhost:8080/products';
+  private productsByIdUrl = 'http://localhost:8080/products/';
   constructor(private http: HttpClient) {
   }
 
   getProducts(): Observable<IProducts> {
     return this.http.get<IProducts>(this.productsUrl, {});
+  }
+  getProductsById(id: number): Observable<IProducts> {
+    return this.http.get<IProducts>(this.productsByIdUrl + id, {});
   }
 }

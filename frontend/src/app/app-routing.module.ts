@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'new-titles', component: NewTitlesComponent },
   { path: 'bestsellers', component: BestsellersComponent },
   { path: 'discounts', component: DiscountsComponent },
-  { path: 'book', component: BookComponent },
+  { path: 'product/:id', component: BookComponent },
   { path: 'login', component: LoginComponent },
   { path: '**', component: PageNotFoundComponent },];
 
