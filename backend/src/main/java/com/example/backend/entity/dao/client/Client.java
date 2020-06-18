@@ -36,7 +36,7 @@ public class Client extends BaseEntity {
     @Size(min = 0, max = 32)
     private String login;
     @NotBlank
-    @Size(min = 0, max = 32)
+    @Size(min = 0, max = 128)
     private String password;
     @NotBlank
     @Size(min = 0, max = 32)
@@ -54,9 +54,9 @@ public class Client extends BaseEntity {
     private boolean tokenExpired;
     @ManyToMany
     @JoinTable(
-            name = "users_roles",
+            name = "clients_roles",
             joinColumns = @JoinColumn(
-                    name = "user_id", referencedColumnName = "id"),
+                    name = "clients_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(
                     name = "role_id", referencedColumnName = "id"))
     private Collection<Role> roles;
