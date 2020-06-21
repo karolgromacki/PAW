@@ -8,7 +8,7 @@ import { IProducts } from '../interfaces/Products';
 })
 export class DBUtilsService {
   private productsUrl = 'http://localhost:8080/products';
-  private productsByIdUrl = 'http://localhost:8080/products/';
+  private productsByIdUrl = 'http://localhost:8080/product/';
   constructor(private http: HttpClient) {
   }
 

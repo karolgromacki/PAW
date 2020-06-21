@@ -14,7 +14,6 @@ export class DiscountsComponent implements OnInit {
   buttonText = "Do koszyka";
   ngOnInit(): void {
     this.DBUtils.getProducts().subscribe(data => {this.products = data;
-      console.log(this.products);
     });
   }
   onSelect(department) {

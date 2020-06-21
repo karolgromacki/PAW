@@ -8,8 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 /*
@@ -22,6 +24,7 @@ public class Product extends BaseEntity {
     private String productName;
     @Min(value = 0)
     private Double price;
+    @Size(min = 0, max = 5000)
     private String description;
     private String imageUrl;
     @Enumerated

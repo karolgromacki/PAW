@@ -12,9 +12,7 @@ export class BestsellersComponent implements OnInit {
   constructor(private DBUtils: DBUtilsService) { }
   buttonText = "Do koszyka";
   ngOnInit(): void {
-    this.DBUtils.getProducts().subscribe(data => {this.products = data;
-      console.log(this.products);
-    });
+    this.DBUtils.getProducts().subscribe(data => {this.products = data;});
   }
 
 }

@@ -1,21 +1,19 @@
 <div class="col-8 offset-2 bg-dark-gray">
   <div class="row p-5">
-    <div class="col-4"><img class="img-fluid rounded" src="../../../assets/img/witcher.jpg" /></div>
+    <div class="col-4"><img *ngIf="product" class="img-fluid rounded" src="{{product.imageUrl}}" /></div>
     <div class="col-8 my-5 ">
       <div class="text-center">
-        <h1>Andrzej Sapkowski</h1>
-        <h1>Wiedźmin Pani Jeziora</h1>
+        <h1 *ngIf="product">{{product.author}}</h1>
+        <h1 *ngIf="product">{{product.productName}}</h1>
       </div>
       <div class="m-5">
-          <h1>31,04zł</h1>
-          <h1 class="text-right">Do koszyka</h1>
-          <h1 class="text-right">{{id}}</h1>
+          <h1 *ngIf="product">{{product.price | currency:' '}}zł</h1>
+          <button class="btn btn-primary">Dodaj do koszyka</button>
       </div>
     </div>
     <div class="col-12 mt-5">
-        <h1>Notka</h1>
-        <p>Ciri wpatruje się w wypukły relief przedstawiający ogromnego węża. Gad, zwinąwszy się w kształt ósemki, wgryzł się zębiskami we własny ogon. To pradawny wąż Uroboros. Symbolizuje nieskończoność i sam jest nieskończonością. Jest wiecznym odchodzeniem i wiecznym powracaniem. Jest czymś, co nie ma ani początku, ani końca.
-            A to, że Uroboros gryzie swój ogon, oznacza, że koło jest zamknięte.</p>
+        <h1>Opis:</h1>
+        <p>{{product.description}}</p>
     </div>
   </div>
 </div>

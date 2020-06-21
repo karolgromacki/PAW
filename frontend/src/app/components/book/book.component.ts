@@ -8,7 +8,6 @@ import { IProducts } from '../interfaces/Products';
   styleUrls: ['./book.component.scss']
 })
 export class BookComponent implements OnInit {
-  public productId;
   id;
   product: IProducts;
   constructor(private DBUtils: DBUtilsService, private route: ActivatedRoute) { }
