@@ -10,7 +10,7 @@ public class ClientShortDto extends BaseDto {
     private String lastName;
     private String email;
     private String Address;
-
+    private boolean enabled;
     public ClientShortDto() {
     }
 
@@ -44,5 +44,13 @@ public class ClientShortDto extends BaseDto {
 
     public void setAddress(String address) {
         Address = address;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 }

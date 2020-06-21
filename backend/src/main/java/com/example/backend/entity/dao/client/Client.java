@@ -3,12 +3,11 @@ package com.example.backend.entity.dao.client;
 
 import com.example.backend.entity.dao.BaseEntity;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Collection;
 import java.util.List;
 
 /*
@@ -37,7 +36,7 @@ public class Client extends BaseEntity {
     @Size(min = 0, max = 32)
     private String login;
     @NotBlank
-    @Size(min = 0, max = 32)
+    @Size(min = 0, max = 128)
     private String password;
     @NotBlank
     @Size(min = 0, max = 32)
@@ -46,6 +45,21 @@ public class Client extends BaseEntity {
     private List<Basket> baskets;
     @OneToMany(cascade = CascadeType.DETACH, mappedBy = "client")
     private List<Payment> payments;
+
+    @NotNull
+    private boolean blocked;
+
+    private boolean enabled;
+
+    private boolean tokenExpired;
+    @ManyToMany
+    @JoinTable(
+            name = "clients_roles",
+            joinColumns = @JoinColumn(
+                    name = "clients_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "role_id", referencedColumnName = "id"))
+    private Collection<Role> roles;
 
     public Client() {
     }
@@ -128,5 +142,37 @@ public class Client extends BaseEntity {
 
     public void setPayments(List<Payment> payments) {
         this.payments = payments;
+    }
+
+    public boolean isBlocked() {
+        return blocked;
+    }
+
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public boolean isTokenExpired() {
+        return tokenExpired;
+    }
+
+    public void setTokenExpired(boolean tokenExpired) {
+        this.tokenExpired = tokenExpired;
+    }
+
+    public Collection<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
     }
 }

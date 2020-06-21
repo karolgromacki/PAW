@@ -22,7 +22,7 @@ public class ClientDto extends BaseDto {
     private String login;
     private String password;
     private String NIP;
-
+    private boolean enabled;
     public ClientDto() {
     }
 
@@ -88,5 +88,13 @@ public class ClientDto extends BaseDto {
 
     public void setNIP(String NIP) {
         this.NIP = NIP;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 }
