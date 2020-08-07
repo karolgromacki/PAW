@@ -1,7 +1,10 @@
 package com.example.backend.entity.dto.product;
 
 import com.example.backend.entity.dao.enums.Category;
+import com.example.backend.entity.dao.enums.DiscountType;
 import com.example.backend.entity.dto.BaseDto;
+
+import javax.persistence.Enumerated;
 
 /*
     @author Kacper Buczak 
@@ -13,7 +16,7 @@ public class ProductDto extends BaseDto {
     private Category category;
     private String author;
     private String imageUrl;
-
+    private DiscountType discountType;
     public ProductDto() {
     }
 
@@ -63,5 +66,13 @@ public class ProductDto extends BaseDto {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public DiscountType getDiscountType() {
+        return discountType;
+    }
+
+    public void setDiscountType(DiscountType discountType) {
+        this.discountType = discountType;
     }
 }

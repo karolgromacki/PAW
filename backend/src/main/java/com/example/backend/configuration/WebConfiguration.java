@@ -105,7 +105,7 @@ public class WebConfiguration extends WebSecurityConfigurerAdapter implements We
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
 
-        httpSecurity.csrf().disable()
+/*        httpSecurity.csrf().disable()
                 .authorizeRequests().antMatchers("/authenticate").permitAll()
                 .anyRequest()
                 .authenticated()
@@ -116,7 +116,7 @@ public class WebConfiguration extends WebSecurityConfigurerAdapter implements We
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-        httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+        httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);*/
     }
 
 }
