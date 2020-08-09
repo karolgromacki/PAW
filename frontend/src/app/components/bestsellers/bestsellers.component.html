@@ -3,6 +3,7 @@
     <div class="row">
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 my-3" *ngFor="let product of products; let cardIndex = index">
             <mdb-card class="mt-1 bg-dark text-light">
+                <div ></div>
                 <mdb-card-img routerLink="/product/{{product.id}}" src="{{product.imageUrl}}" alt="Card image cap">
                 </mdb-card-img>
                 <mdb-card-body class="text-center">

@@ -6,4 +6,5 @@ export interface IProducts {
     imageUrl: string;
     price: number;
     productName: string;
+    discountType: number;
    }
