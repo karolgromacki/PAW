@@ -92,6 +92,7 @@ public class WebConfiguration extends WebSecurityConfigurerAdapter implements We
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
+
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/v2/api-docs",
@@ -107,6 +108,10 @@ public class WebConfiguration extends WebSecurityConfigurerAdapter implements We
 
         httpSecurity.csrf().disable()
                 .authorizeRequests().antMatchers("/authenticate").permitAll()
+                .and()
+                .authorizeRequests().antMatchers("/baskets/**", "/basket/**").permitAll()
+                .and()
+                .authorizeRequests().antMatchers("/products/**", "/product/**").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
