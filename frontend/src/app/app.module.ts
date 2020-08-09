@@ -6,6 +6,7 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SingUpComponent } from './components/sing-up/sing-up.component';
 
 
 
@@ -15,6 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
     NavigationComponent,
     FooterComponent,
     routingComponents,
+    SingUpComponent,
 
 
   ],
