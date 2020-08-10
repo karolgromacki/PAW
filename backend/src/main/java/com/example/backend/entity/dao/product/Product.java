@@ -5,10 +5,7 @@ import com.example.backend.entity.dao.client.Basket;
 import com.example.backend.entity.dao.enums.Category;
 import com.example.backend.entity.dao.enums.DiscountType;
 
-import javax.persistence.Entity;
-import javax.persistence.Enumerated;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -32,8 +29,10 @@ public class Product extends BaseEntity {
     @NotBlank
     private String author;
 
-    @Enumerated
-    private DiscountType discountType;
+    @Enumerated(EnumType.STRING)
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "discountType")
+    private List<DiscountType> discountType;
 
     @ManyToMany(mappedBy = "products")
     private List<Basket> baskets;
@@ -97,11 +96,11 @@ public class Product extends BaseEntity {
         this.baskets = baskets;
     }
 
-    public DiscountType getDiscountType() {
+    public List<DiscountType> getDiscountType() {
         return discountType;
     }
 
-    public void setDiscountType(DiscountType discountType) {
+    public void setDiscountType(List<DiscountType> discountType) {
         this.discountType = discountType;
     }
 }

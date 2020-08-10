@@ -5,6 +5,7 @@ import com.example.backend.entity.dao.enums.DiscountType;
 import com.example.backend.entity.dto.BaseDto;
 
 import javax.persistence.Enumerated;
+import java.util.List;
 
 /*
     @author Kacper Buczak 
@@ -16,7 +17,7 @@ public class ProductDto extends BaseDto {
     private Category category;
     private String author;
     private String imageUrl;
-    private DiscountType discountType;
+    private List<DiscountType> discountType;
     public ProductDto() {
     }
 
@@ -68,11 +69,11 @@ public class ProductDto extends BaseDto {
         this.imageUrl = imageUrl;
     }
 
-    public DiscountType getDiscountType() {
+    public List<DiscountType> getDiscountType() {
         return discountType;
     }
 
-    public void setDiscountType(DiscountType discountType) {
+    public void setDiscountType(List<DiscountType> discountType) {
         this.discountType = discountType;
     }
 }
