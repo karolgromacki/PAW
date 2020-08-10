@@ -77,8 +77,8 @@
             </p>
           </li>
           <li>
-            <p class="btn btn-outline-light btn-sm ml-0" routerLink="/basket" type="submit">
-              Koszyk
+            <p [(ngModel)]="Count" class="btn btn-outline-light btn-sm ml-0" routerLink="/basket" type="submit">
+              Koszyk <span style="color:red">({{Count}})</span>
             </p>
           </li>
         </ul>

@@ -10,13 +10,13 @@ import { BasketService } from '../services/basket.service';
 })
 export class BestsellersComponent implements OnInit {
   products: IProducts;
-  constructor(private DBUtils: DBUtilsService, private basket: BasketService) { }
+  constructor(private DBUtils: DBUtilsService, private BasketService: BasketService) { }
   buttonText = "Do koszyka";
   ngOnInit(): void {
-    this.DBUtils.getProducts().subscribe(data => {this.products = data;});
-    console.log(this.basket.books);
+    this.DBUtils.getProducts().subscribe(data => { this.products = data; });
+    console.log(this.BasketService.getBooks());
   }
-  add(id,author,price,product_name){
-    this.basket.add(id,author,price,product_name);
+  onClick(author, title, price) {
+    this.BasketService.add(author, title, price);
   }
 }

@@ -15,6 +15,7 @@ export class DBUtilsService {
   getProducts(): Observable<IProducts> {
     return this.http.get<IProducts>(this.productsUrl, {});
   }
+
   getProductsById(id: number): Observable<IProducts> {
     return this.http.get<IProducts>(this.productsByIdUrl + id, {});
   }

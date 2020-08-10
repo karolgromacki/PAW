@@ -6,16 +6,31 @@ import { DBUtilsService } from './dbutils.service';
   providedIn: 'root'
 })
 export class BasketService {
-  books = [
-    { id: 1, author: "Andrzej Sapkowski", price: 31, product_name: "Ostatnie Życzenie" },
-    { id: 2, author: "Andrzej Sapkowski", price: 31, product_name: "Miecz Przeznaczenia" },
-    { id: 3, author: "Andrzej Sapkowski", price: 31, product_name: "Krew Elfów" },
-    { id: 4, author: "Andrzej Sapkowski", price: 31, product_name: "Czas Pogardy" },
-    { id: 5, author: "Andrzej Sapkowski", price: 31, product_name: "Chrzest Ognia" }
-  ]
+  books = [];
 
-  add(id, author, price, productName) {
-    this.books.push({ id: id, author: author, price: price, product_name: productName });
+  add(author, price, title) {
+    this.getBooks();
+    this.books.push({ author: author, title: title, price: price});
+    this.setBooks(this.books);
+    return this.books.length;
   }
+  setBooks(books) {
+      localStorage.setItem('books', JSON.stringify(books));
+    }
+
+  getBooks() {
+    if (localStorage.getItem('books') === null) {
+    }
+    else {
+      this.books = JSON.parse(localStorage.getItem('books'));
+
+    }
+    return this.books.length;
+  }
+  getBooksToBasket(){
+    this.getBooks();
+    return this.books;
+  }
+
 
 }

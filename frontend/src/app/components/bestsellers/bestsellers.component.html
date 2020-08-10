@@ -1,18 +1,20 @@
 <div class="col-10 offset-1 mt-5">
-    <h1 class="text-center my-5" routerLink="/bestsellers">Bestsellery</h1>
-    <div class="row">
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 my-3" *ngFor="let product of products; let cardIndex = index">
-            <mdb-card class="mt-1 bg-dark text-light">
-                <div ></div>
-                <mdb-card-img routerLink="/product/{{product.id}}" src="{{product.imageUrl}}" alt="Card image cap">
-                </mdb-card-img>
-                <mdb-card-body class="text-center">
-                    <mdb-card-title>
-                        <h4>{{ product.price | currency:'PLN '}}</h4>
-                    </mdb-card-title>
-                    <a href="#" mdbBtn color="light" class="waves-light p-2" mdbWavesEffect>{{ buttonText }}</a>
-                </mdb-card-body>
-            </mdb-card>
-        </div>
+  <h1 class="text-center my-5" routerLink="/discounts">Bestsellery</h1>
+  <div class="row">
+    <div style="position:center;"*ngFor="let product of products; let cardIndex = index">
+      <div class="col-12 mt-5" *ngIf="product.discountType == 'BESTSELLER';">
+        <mdb-card class="bg-dark text-light">
+          <img routerLink="/product/{{product.id}}" routerLinkActive="router-link-active"
+            src="{{product.imageUrl}}" style="width:200px;height:280px" alt="Card image cap">
+          <mdb-card-body class="text-center">
+            <mdb-card-title>
+              <h4>{{ product.price | currency:'PLN '}}</h4>
+              <h4>{{ product.discountType}}</h4>
+            </mdb-card-title>
+            <a mdbBtn color="light" class="text-dark waves-light p-2" (click)="onClick(product.author, product.price, product.productName)" mdbWavesEffect>{{ buttonText }}</a>
+          </mdb-card-body>
+        </mdb-card>
+      </div>
     </div>
+  </div>
 </div>
