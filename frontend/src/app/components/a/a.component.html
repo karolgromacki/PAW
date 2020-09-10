@@ -1,0 +1,6 @@
+<div id="myDropdown" class="dropdown-content col-12 p-0" style="max-height:200px;">
+  <input type="text" class="form-control sticky-top" id="myInput" (keyup)="this.DBUtilsService.searchFunction('a', 'myDropdown')">
+  <div *ngFor="let product of products">
+    <a >{{product.author}} {{product.productName}}</a>
+  </div>
+</div>

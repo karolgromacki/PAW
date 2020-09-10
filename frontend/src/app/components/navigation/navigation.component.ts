@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BasketService } from '../services/basket.service';
-
+import { interval } from 'rxjs';
+import { DBUtilsService } from '../services/dbutils.service';
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -8,10 +9,16 @@ import { BasketService } from '../services/basket.service';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor(private BasketService: BasketService) { }
+  constructor(private BasketService: BasketService, public DBUtilsService: DBUtilsService) { }
   Count;
+  search;
   ngOnInit(): void {
-  this.Count = this.BasketService.getBooks();
+    this.getCount();
+    interval(1000).subscribe(() => {
+      this.getCount();
+    });
   }
-
+  getCount(){
+    this.Count = this.BasketService.getBooks();
+  }
 }

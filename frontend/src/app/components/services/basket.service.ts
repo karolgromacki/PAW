@@ -27,6 +27,10 @@ export class BasketService {
     }
     return this.books.length;
   }
+  clearBooks(){
+    this.books.length=0;
+    localStorage.setItem('books', JSON.stringify(this.books));
+  }
   getBooksToBasket(){
     this.getBooks();
     return this.books;

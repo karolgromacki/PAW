@@ -19,4 +19,22 @@ export class DBUtilsService {
   getProductsById(id: number): Observable<IProducts> {
     return this.http.get<IProducts>(this.productsByIdUrl + id, {});
   }
+  searchFunction(tagSearchName, tagContainerName) {
+    let input;
+    let filter;
+    let tag;
+    let i;
+    input = document.getElementById('myInput');
+    filter = input.value.replace(/\s/g, '').toUpperCase();
+    const div = document.getElementById(tagContainerName);
+    tag = div.getElementsByTagName(tagSearchName);
+    for (i = 0; i < tag.length; i++) {
+      const txtValue = tag[i].textContent || tag[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tag[i].style.display = '';
+      } else {
+        tag[i].style.display = 'none';
+      }
+    }
+  }
 }

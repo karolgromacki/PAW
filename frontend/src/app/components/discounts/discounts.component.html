@@ -9,9 +9,9 @@
           <mdb-card-body class="text-center">
             <mdb-card-title>
               <h4>{{ product.price | currency:'PLN '}}</h4>
-              <h4>{{ product.discountType}}</h4>
+              <!-- <h4>{{ product.discountType}}</h4> -->
             </mdb-card-title>
-            <a mdbBtn color="light" class="waves-light p-2" (click)="onClick(product.author, product.price, product.productName)" mdbWavesEffect>{{ buttonText }}</a>
+            <a mdbPopover="Dodano książkę." placement="top" triggers="focus" mdbBtn color="light" class="text-dark waves-light p-2" (click)="onClick(product.author, product.price, product.productName)" mdbWavesEffect>{{ buttonText }}</a>
           </mdb-card-body>
         </mdb-card>
       </div>

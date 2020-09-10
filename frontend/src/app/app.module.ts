@@ -17,8 +17,6 @@ import { SingUpComponent } from './components/sing-up/sing-up.component';
     FooterComponent,
     routingComponents,
     SingUpComponent,
-
-
   ],
   imports: [
     BrowserModule,

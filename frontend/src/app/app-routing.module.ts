@@ -9,6 +9,7 @@ import { BestsellersComponent } from './components/bestsellers/bestsellers.compo
 import { DiscountsComponent } from './components/discounts/discounts.component';
 import { NewTitlesComponent } from './components/new-titles/new-titles.component';
 import { SingUpComponent } from './components/sing-up/sing-up.component';
+import { AComponent } from './components/a/a.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'product/:id', component: BookComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SingUpComponent },
+  { path: 'a', component: AComponent },
   { path: '**', component: PageNotFoundComponent },];
 
 @NgModule({
@@ -27,4 +29,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [BasketComponent,SingUpComponent, MainComponent, BookComponent, LoginComponent, PageNotFoundComponent, BestsellersComponent, DiscountsComponent, NewTitlesComponent];
+export const routingComponents = [AComponent,BasketComponent,SingUpComponent, MainComponent, BookComponent, LoginComponent, PageNotFoundComponent, BestsellersComponent, DiscountsComponent, NewTitlesComponent];

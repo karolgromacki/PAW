@@ -2,8 +2,8 @@
   <h3 class="text-dark card-header text-center font-weight-bold text-uppercase py-4">
     Koszyk
   </h3>
-  <div class="card-body">
-    <div id="table" class="table-editable">
+  <div class="card-body mx-lg-5 px-lg-5">
+    <div id="table" class="table-editable " id="content" #content>
       <table responsive="true" small="true" striped="true"
         class="table table-bordered table-responsive-md table-striped text-center">
         <thead class="black white-text">
@@ -16,15 +16,15 @@
         </thead>
         <tbody>
           <tr *ngFor="let book of bookList; let id = index">
-            <td>{{ book.author }}
+            <td class="align-middle">{{ book.author }}
             </td>
-            <td>
+            <td class="align-middle">
               {{ book.title }}
             </td>
-            <td>
+            <td class="align-middle">
               {{ book.price | currency:' '}} zł
             </td>
-            <td>
+            <td class="align-middle">
               <span class="table-remove">
                 <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0 py-1 px-2"
                   (click)="remove(id)">
@@ -38,9 +38,11 @@
     </div>
   </div>
   <div class="border">
-    <div class="text-dark col-3 offset-9 my-4">
-      Razem: bardzo dużo
-      <button type="button" mdbBtn color="dark" mdbWavesEffect>Zapłać</button>
+    <div class="text-dark float-right my-4 mr-5">
+      <a>Razem: <span class="font-weight-bold">{{suma | currency:' '}} zł</span></a>
+      <button type="button" mdbBtn color="dark" mdbWavesEffect (click) = "payment()">Zapłać</button>
     </div>
   </div>
 </div>
+
+

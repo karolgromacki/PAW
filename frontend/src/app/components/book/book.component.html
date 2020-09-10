@@ -8,7 +8,7 @@
       </div>
       <div class="m-5">
           <h1 *ngIf="product">{{product.price | currency:' '}}zł</h1>
-          <button class="btn btn-primary">Dodaj do koszyka</button>
+          <button mdbPopover="Dodano książkę." placement="bottom" triggers="focus" class="btn btn-primary" (click)="onClick(product.author, product.price, product.productName);">Dodaj do koszyka</button>
       </div>
     </div>
     <div class="col-12 mt-5">
