@@ -2,11 +2,7 @@
   <form class="text-center p-5">
 
     <p class="h4 mb-4">Sign in</p>
-
-    <!-- Email -->
-    <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
-
-    <!-- Password -->
+    <input type="text" id="defaultLoginForm" class="form-control mb-4" placeholder="Username">
     <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
 
     <div class="d-flex justify-content-around">
@@ -21,7 +17,7 @@
     </div>
 
     <!-- Sign in button -->
-    <button type="button" mdbBtn color="primary" mdbWavesEffect routerLink="/homepage" class="my-4 mx-1 py-1 px-5">Sign
+    <button type="button" mdbBtn color="primary" mdbWavesEffect (click)="checkLogin()" class="my-4 mx-1 py-1 px-5">Sign
       in
     </button>
     <button type="button" mdbBtn color="success" mdbWavesEffect routerLink="/signup" class="my-4 mx-1 py-1 px-5">Sign
