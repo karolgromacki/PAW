@@ -22,8 +22,18 @@ public class ClientDto extends BaseDto {
     private String login;
     private String password;
     private String NIP;
+    private Double accountBalance;
+
     private boolean enabled;
     public ClientDto() {
+    }
+
+    public Double getAccountBalance() {
+        return accountBalance;
+    }
+
+    public void setAccountBalance(Double accountBalance) {
+        this.accountBalance = accountBalance;
     }
 
     public String getFirstName() {

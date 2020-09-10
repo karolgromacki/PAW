@@ -41,10 +41,17 @@ public class Client extends BaseEntity {
     @NotBlank
     @Size(min = 0, max = 32)
     private String NIP;
+    @NotBlank
+    @Size(min = 0)
+    private Double accountBalance;
+
+
     @OneToMany(cascade = CascadeType.DETACH, mappedBy = "client")
     private List<Basket> baskets;
     @OneToMany(cascade = CascadeType.DETACH, mappedBy = "client")
     private List<Payment> payments;
+
+
 
     @NotNull
     private boolean blocked;
@@ -62,6 +69,14 @@ public class Client extends BaseEntity {
     private Collection<Role> roles;
 
     public Client() {
+    }
+
+    public Double getAccountBalance() {
+        return accountBalance;
+    }
+
+    public void setAccountBalance(Double accountBalance) {
+        this.accountBalance = accountBalance;
     }
 
     public String getFirstName() {

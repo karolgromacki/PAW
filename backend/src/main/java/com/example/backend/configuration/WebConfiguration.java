@@ -112,6 +112,8 @@ public class WebConfiguration extends WebSecurityConfigurerAdapter implements We
                 .authorizeRequests().antMatchers("/baskets/**", "/basket/**").permitAll()
                 .and()
                 .authorizeRequests().antMatchers("/products/**", "/product/**").permitAll()
+                .and()
+                .authorizeRequests().antMatchers("/clients/**").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()

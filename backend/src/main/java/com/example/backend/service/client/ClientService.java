@@ -46,6 +46,7 @@ public class ClientService {
         client.setNIP(clientDto.getNIP());
         client.setPassword(clientDto.getPassword());
         client.setPhoneNumber(clientDto.getPhoneNumber());
+        client.setAccountBalance(clientDto.getAccountBalance());
         return entityToSimpleDTO(clientRepository.save(client));
     }
 
@@ -59,17 +60,14 @@ public class ClientService {
     }
 
     private Client dtoToEntityMapper(ClientDto entity) {
-        Client entityDto = modelMapper.map(entity, Client.class);
-        return entityDto;
+        return modelMapper.map(entity, Client.class);
     }
 
     private ClientDto entityToSimpleDTO(Client entity) {
-        ClientDto entityDto = modelMapper.map(entity, ClientDto.class);
-        return entityDto;
+        return modelMapper.map(entity, ClientDto.class);
     }
 
     private ClientShortDto entityToShortDTO(Client entity) {
-        ClientShortDto entityDto = modelMapper.map(entity, ClientShortDto.class);
-        return entityDto;
+        return modelMapper.map(entity, ClientShortDto.class);
     }
 }
