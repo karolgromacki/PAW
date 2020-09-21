@@ -8,6 +8,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { SingUpComponent } from './components/sing-up/sing-up.component';
 import { FormsModule } from '@angular/forms';
+import {BasicAuthHttpInterceptor} from './interceptor/basic-auth-http.interceptor';
 
 
 
@@ -20,11 +21,15 @@ import { FormsModule } from '@angular/forms';
     SingUpComponent,
   ],
   imports: [
-    BrowserModule,FormsModule,
+    BrowserModule, FormsModule,
     AppRoutingModule, HttpClientModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: BasicAuthHttpInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })

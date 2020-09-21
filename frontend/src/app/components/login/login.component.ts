@@ -8,15 +8,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  username = 'lemi0';
-  password = 'password';
+  username = 'e1';
+  password = 'e1';
   invalidLogin = false;
-  constructor(private router: Router,private loginservice: AuthenticationService) { }
+  constructor(private router: Router, private loginService: AuthenticationService) { }
 
   ngOnInit(): void {
   }
   checkLogin() {
-    this.loginservice
+    this.loginService
       .authenticate(this.username, this.password)
       .subscribe(token => {
           this.router.navigate(['/worktime']);
