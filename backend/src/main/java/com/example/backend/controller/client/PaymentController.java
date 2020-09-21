@@ -9,6 +9,7 @@ import com.example.backend.service.client.PaymentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -43,6 +44,7 @@ public class PaymentController {
                 .body(paymentService.getPaymentByOrderId(orderId));
     }
 
+    // @Secured("ROLE_ADMIN")
     @PostMapping(value = "/payments")
     public ResponseEntity<PaymentShortDto> createPayment(@RequestBody PaymentShortDto paymentShortDto, @RequestParam Long clientId) {
         return ResponseEntity
