@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class DiscountsComponent implements OnInit {
 
-  products: IProducts;
+  products: IProducts[];
   constructor(private DBUtils: DBUtilsService, private router: Router, private BasketService: BasketService) { }
   buttonText = "Do koszyka";
   ngOnInit(): void {

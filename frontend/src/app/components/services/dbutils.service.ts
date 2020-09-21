@@ -14,8 +14,8 @@ export class DBUtilsService {
   constructor(private http: HttpClient) {
   }
 
-  getProducts(): Observable<IProducts> {
-    return this.http.get<IProducts>(this.productsUrl, {});
+  getProducts(): Observable<IProducts[]> {
+    return this.http.get<IProducts[]>(this.productsUrl, {});
   }
 
   getProductsById(id: number): Observable<IProducts> {

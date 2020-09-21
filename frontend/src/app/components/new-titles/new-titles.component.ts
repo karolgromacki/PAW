@@ -9,7 +9,7 @@ import { BasketService } from '../services/basket.service';
   styleUrls: ['./new-titles.component.scss']
 })
 export class NewTitlesComponent implements OnInit {
-  products: IProducts;
+  products: IProducts[];
   constructor(private DBUtils: DBUtilsService, private BasketService: BasketService) { }
   buttonText = "Do koszyka";
   ngOnInit(): void {

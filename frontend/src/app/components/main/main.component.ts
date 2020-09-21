@@ -9,7 +9,7 @@ import { IProducts } from '../interfaces/Products';
 })
 export class MainComponent implements OnInit {
 
-  products: IProducts;
+  products: IProducts[];
   CAROUSEL_BREAKPOINT = 768;
   carouselDisplayMode = 'multiple';
   buttonText = "Do koszyka";
@@ -19,7 +19,7 @@ export class MainComponent implements OnInit {
       console.log(this.products);
     });
 
-    
+
     this.slides = this.chunk(this.cards, 4);
     if (window.innerWidth < 1200 && window.innerWidth >= 992) {
       this.slides = this.chunk(this.cards, 4);

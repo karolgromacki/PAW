@@ -9,7 +9,7 @@ import { BasketService } from '../services/basket.service';
   styleUrls: ['./bestsellers.component.scss']
 })
 export class BestsellersComponent implements OnInit {
-  products: IProducts;
+  products: IProducts[];
   @ViewChild('add') add: ElementRef;
   constructor(private DBUtils: DBUtilsService, private BasketService: BasketService, private renderer: Renderer2) { }
   buttonText = "Do koszyka";
