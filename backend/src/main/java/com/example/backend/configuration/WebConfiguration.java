@@ -107,7 +107,7 @@ public class WebConfiguration extends WebSecurityConfigurerAdapter implements We
     protected void configure(HttpSecurity httpSecurity) throws Exception {
 
         httpSecurity.csrf().disable()
-                .authorizeRequests().antMatchers("/authenticate").permitAll()
+                .authorizeRequests().antMatchers("/authenticate", "/clients").permitAll()
                 .and()
                 .authorizeRequests().antMatchers("/baskets/**", "/basket/**").permitAll()
                 .and()

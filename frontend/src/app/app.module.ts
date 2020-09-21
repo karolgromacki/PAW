@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SingUpComponent } from './components/sing-up/sing-up.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -19,7 +20,7 @@ import { SingUpComponent } from './components/sing-up/sing-up.component';
     SingUpComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,FormsModule,
     AppRoutingModule, HttpClientModule,
     MDBBootstrapModule.forRoot()
   ],

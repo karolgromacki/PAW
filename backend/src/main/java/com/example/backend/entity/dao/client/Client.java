@@ -43,7 +43,7 @@ public class Client extends BaseEntity {
     private String NIP;
     @NotBlank
     @Size(min = 0)
-    private Double accountBalance;
+    private String accountBalance;
 
 
     @OneToMany(cascade = CascadeType.DETACH, mappedBy = "client")
@@ -71,11 +71,11 @@ public class Client extends BaseEntity {
     public Client() {
     }
 
-    public Double getAccountBalance() {
+    public String getAccountBalance() {
         return accountBalance;
     }
 
-    public void setAccountBalance(Double accountBalance) {
+    public void setAccountBalance(String accountBalance) {
         this.accountBalance = accountBalance;
     }
 

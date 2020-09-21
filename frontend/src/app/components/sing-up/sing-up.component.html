@@ -26,14 +26,10 @@
     </small>
 
     <!-- Phone number -->
-    <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number"
-      aria-describedby="defaultRegisterFormPhoneHelpBlock">
-    <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-      Optional - for two-step authentication
-    </small>
-
+    <input type="text" class="form-control" placeholder="Phone number">
+    <input type="text" class="form-control" placeholder="Phone number">
     <!-- Sign up button -->
-    <button mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button>
+    <button mdbBtn color="info" block="true" class="my-4" type="submit" (click)="submit()">Sign in</button>
   </form>
   <!-- Default form register -->
 </div>

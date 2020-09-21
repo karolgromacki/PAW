@@ -8,7 +8,9 @@ import { IProducts } from '../interfaces/Products';
 })
 export class DBUtilsService {
   private productsUrl = 'http://localhost:8080/products';
+  private clientsUrl = 'http://localhost:8080/clients';
   private productsByIdUrl = 'http://localhost:8080/product/';
+
   constructor(private http: HttpClient) {
   }
 
@@ -19,7 +21,23 @@ export class DBUtilsService {
   getProductsById(id: number): Observable<IProducts> {
     return this.http.get<IProducts>(this.productsByIdUrl + id, {});
   }
+  postEntranceNew(firstName, lastName, email, login, password, address, phoneNumber) {
+    return this.http.post<any>(this.clientsUrl, {
+      id: 0,
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      login,
+      password,
+      accountBalance: "0",
+      enabled: true,
+      address,
+      nip: "string"
+    });
+  }
   searchFunction(tagSearchName, tagContainerName) {
+
     let input;
     let filter;
     let tag;
@@ -36,5 +54,6 @@ export class DBUtilsService {
         tag[i].style.display = 'none';
       }
     }
+    console.log(tagSearchName, tagContainerName, input, filter,tag);
   }
 }

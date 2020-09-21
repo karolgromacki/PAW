@@ -13,5 +13,7 @@ export class AComponent implements OnInit {
   ngOnInit(): void {
     this.DBUtilsService.getProducts().subscribe(data => { this.products = data; });
   }
-
+  myFunction() {
+    document.getElementById('myDropdown').classList.add("show");
+  }
 }

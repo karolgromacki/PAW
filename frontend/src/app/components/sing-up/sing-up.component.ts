@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DBUtilsService } from '../services/dbutils.service';
 
 @Component({
   selector: 'app-sing-up',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingUpComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public DButils: DBUtilsService) { }
+  firstName; lastName; email; login; password; address; phoneNumber;
   ngOnInit(): void {
   }
-
+submit(){
+  this.DButils.postEntranceNew(this.firstName, this.lastName, this.email, this.login, this.password, this.address, this.phoneNumber);
+}
 }
