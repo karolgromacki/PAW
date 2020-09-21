@@ -57,14 +57,14 @@
         >
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0 ml-auto">
+    <form  class="form-inline my-2 my-lg-0 ml-auto">
       <div class="md-form my-0">
         <input
           class="form-control mr-sm-2"
           type="text"
           placeholder="Search"
           aria-label="Search"
-          [(ngModel)]="search"
+          [(ngModel)]="search"  [ngModelOptions]="{standalone: true}"
         />
         <div id="myDropdown" class="dropdown-content col-12 p-0" style="max-height:200px;">
           <input type="text" class="form-control sticky-top" id="myInput" (keyup)="this.DBUtilsService.searchFunction('a', 'myDropdown')">
@@ -81,8 +81,10 @@
             </p>
           </li>
           <li>
-            <p [(ngModel)]="Count" class="btn btn-outline-light btn-sm ml-0" routerLink="/basket" type="submit">
-              Koszyk <span style="color:red">({{Count}})</span>
+            <p class="btn btn-outline-light btn-sm ml-0" routerLink="/basket" type="submit">
+              Koszyk
+              <span style="color:red">({{Count}})
+              </span>
             </p>
           </li>
         </ul>
