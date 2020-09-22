@@ -1,11 +1,14 @@
 package com.example.backend.controller.client;
 
+import com.example.backend.entity.dto.client.ClientBalanceDto;
 import com.example.backend.entity.dto.client.ClientDto;
 import com.example.backend.entity.dto.client.ClientShortDto;
 import com.example.backend.service.client.ClientService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,6 +26,13 @@ public class ClientController {
         this.clientService = clientService;
     }
 
+    @GetMapping(value = "/client/{id}/balance")
+    public ResponseEntity<ClientBalanceDto> getClientAccountBalance(@PathVariable Long id) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(clientService.getClientAccountBalance(user.getUsername()));
+    }
 
     @GetMapping(value = "/clients")
     public ResponseEntity<List<ClientShortDto>> getListOfClients() {

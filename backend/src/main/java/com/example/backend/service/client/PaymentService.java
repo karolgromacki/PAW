@@ -1,5 +1,6 @@
 package com.example.backend.service.client;
 
+import com.example.backend.entity.dao.client.Client;
 import com.example.backend.entity.dao.client.Payment;
 import com.example.backend.entity.dto.client.PaymentShortDto;
 import com.example.backend.repository.ClientRepository;
@@ -46,12 +47,19 @@ public class PaymentService {
     }
 
     public PaymentShortDto createPayment(PaymentShortDto paymentShortDto, Long clientId) {
+        Client client = clientRepository.getOne(clientId);
+        if (client.getAccountBalance() <= paymentShortDto.getAmount()) {
+            throw new RuntimeException("Not enough money");
+        }
         Payment payment = new Payment();
         payment.setAmount(paymentShortDto.getAmount());
         payment.setClient(clientRepository.getOne(clientId));
         payment.setDate(paymentShortDto.getDate());
         payment.setPaymentType(paymentShortDto.getPaymentType());
-        return entityToSimpleDTO(paymentRepository.save(payment));
+        Payment savedPayment = paymentRepository.save(payment);
+        client.setAccountBalance(client.getAccountBalance() - savedPayment.getAmount());
+        this.clientRepository.save(client);
+        return entityToSimpleDTO(savedPayment);
     }
 
     public PaymentShortDto updatePayment(PaymentShortDto paymentShortDto) {

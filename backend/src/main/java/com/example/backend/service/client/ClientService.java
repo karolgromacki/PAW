@@ -1,6 +1,7 @@
 package com.example.backend.service.client;
 
 import com.example.backend.entity.dao.client.Client;
+import com.example.backend.entity.dto.client.ClientBalanceDto;
 import com.example.backend.entity.dto.client.ClientDto;
 import com.example.backend.entity.dto.client.ClientShortDto;
 import com.example.backend.repository.ClientRepository;
@@ -29,6 +30,11 @@ public class ClientService {
                 .stream()
                 .map(this::entityToShortDTO)
                 .collect(Collectors.toList());
+    }
+
+    public ClientBalanceDto getClientAccountBalance(String clientEmail) {
+        Client client = clientRepository.findByEmail(clientEmail);
+        return modelMapper.map(client, ClientBalanceDto.class);
     }
 
     public ClientDto createClient(ClientDto clientDto) {
@@ -70,4 +76,5 @@ public class ClientService {
     private ClientShortDto entityToShortDTO(Client entity) {
         return modelMapper.map(entity, ClientShortDto.class);
     }
+
 }

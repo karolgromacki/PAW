@@ -22,17 +22,17 @@ public class ClientDto extends BaseDto {
     private String login;
     private String password;
     private String NIP;
-    private String accountBalance;
+    private Long accountBalance;
 
     private boolean enabled;
     public ClientDto() {
     }
 
-    public String getAccountBalance() {
+    public Long getAccountBalance() {
         return accountBalance;
     }
 
-    public void setAccountBalance(String accountBalance) {
+    public void setAccountBalance(Long accountBalance) {
         this.accountBalance = accountBalance;
     }
 
