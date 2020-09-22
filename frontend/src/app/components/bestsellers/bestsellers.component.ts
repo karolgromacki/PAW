@@ -10,13 +10,20 @@ import { BasketService } from '../services/basket.service';
 })
 export class BestsellersComponent implements OnInit {
   products: IProducts[];
+  filteredProducts: IProducts[];
   @ViewChild('add') add: ElementRef;
+
   constructor(private DBUtils: DBUtilsService, private BasketService: BasketService, private renderer: Renderer2) { }
   buttonText = "Do koszyka";
   ngOnInit(): void {
-    this.DBUtils.getProducts().subscribe(data => { this.products = data; });
+    this.DBUtils.getProducts().subscribe(data => {this.products = data;
+      this.filteredProducts = this.products;
+      });
   }
   onClick(author, title, price) {
     this.BasketService.add(author, title, price);
+  }
+  reciveMessage($event){
+    this.filteredProducts=$event;
   }
 }

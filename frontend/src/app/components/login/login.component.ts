@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     this.loginService
       .authenticate(this.username, this.password)
       .subscribe(token => {
-          this.router.navigate(['/worktime']);
+          this.router.navigate(['/']);
           this.invalidLogin = false;
         },
         error => this.invalidLogin = true);

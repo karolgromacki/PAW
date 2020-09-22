@@ -1,12 +1,2 @@
-<div class="position-fixed col-2 p-2">
-  <button (click)="myFunction()" class="dropbtn btn btn-primary relative waves-light">Search</button>
-  <div id="myDropdown" class="dropdown-content col-12 p-0" style="max-height:200px;">
-    <input type="text" class="form-control sticky-top" id="myInput"
-           (keyup)="filterProcutsOnKeyPress()"
-           [(ngModel)]="title"
-      >
-    <div *ngFor="let employee of filteredProducts">
-      <a>{{employee.productName}}</a>
-    </div>
-  </div>
-</div>
+<input type="text" class="form-control mr-sm-2" type="text" placeholder="Search"
+  (keyup)="sendMessage(); filterProcutsOnKeyPress()" [(ngModel)]="title" [(ngModel)]="author">

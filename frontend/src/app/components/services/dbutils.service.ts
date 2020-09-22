@@ -10,7 +10,8 @@ export class DBUtilsService {
   private productsUrl = 'http://localhost:8080/products';
   private clientsUrl = 'http://localhost:8080/clients';
   private productsByIdUrl = 'http://localhost:8080/product/';
-
+  products: IProducts[];
+  filteredProducts: IProducts[];
   constructor(private http: HttpClient) {
   }
 
@@ -35,25 +36,5 @@ export class DBUtilsService {
       address,
       nip: "string"
     });
-  }
-  searchFunction(tagSearchName, tagContainerName) {
-
-    let input;
-    let filter;
-    let tag;
-    let i;
-    input = document.getElementById('myInput');
-    filter = input.value.replace(/\s/g, '').toUpperCase();
-    const div = document.getElementById(tagContainerName);
-    tag = div.getElementsByTagName(tagSearchName);
-    for (i = 0; i < tag.length; i++) {
-      const txtValue = tag[i].textContent || tag[i].innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tag[i].style.display = '';
-      } else {
-        tag[i].style.display = 'none';
-      }
-    }
-    console.log(tagSearchName, tagContainerName, input, filter,tag);
   }
 }

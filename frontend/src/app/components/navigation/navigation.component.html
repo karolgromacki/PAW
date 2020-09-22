@@ -59,25 +59,17 @@
     </ul>
     <form  class="form-inline my-2 my-lg-0 ml-auto">
       <div class="md-form my-0">
-        <input
-          class="form-control mr-sm-2"
-          type="text"
-          placeholder="Search"
-          aria-label="Search"
-          [(ngModel)]="search"  [ngModelOptions]="{standalone: true}"
-        />
-        <div id="myDropdown" class="dropdown-content col-12 p-0" style="max-height:200px;">
-          <input type="text" class="form-control sticky-top" id="myInput" (keyup)="this.DBUtilsService.searchFunction('a', 'myDropdown')">
-        </div>
-        <button class="btn btn-outline-light btn-sm ml-0" type="submit">
-          Search
-        </button>
-
         <ul class="navbar-nav mr-auto">
           <li>
+            <div *ngIf=""></div>
             <p class="btn btn-outline-light btn-sm ml-0" type="submit"  routerLink="/login"
             routerLinkActive="active">
               Sign in
+            </p>
+            <p class="btn btn-outline-light btn-sm ml-0">
+
+            </p>
+            <p class="btn btn-outline-light btn-sm ml-0" type="submit"  routerLink="/logout">Logout
             </p>
           </li>
           <li>

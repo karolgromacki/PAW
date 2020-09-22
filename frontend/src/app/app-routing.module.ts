@@ -4,6 +4,7 @@ import { BasketComponent } from './components/basket/basket.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { MainComponent } from './components/main/main.component';
 import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
 import { BookComponent } from './components/book/book.component';
 import { BestsellersComponent } from './components/bestsellers/bestsellers.component';
 import { DiscountsComponent } from './components/discounts/discounts.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'discounts', component: DiscountsComponent },
   { path: 'product/:id', component: BookComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'logout',component: LogoutComponent},
   { path: 'signup', component: SingUpComponent },
   { path: 'a', component: AComponent },
   { path: '**', component: PageNotFoundComponent },];

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { BasketService } from '../services/basket.service';
 import { interval } from 'rxjs';
 import { DBUtilsService } from '../services/dbutils.service';
