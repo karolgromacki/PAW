@@ -2,8 +2,8 @@
   <form class="text-center p-5">
 
     <p class="h4 mb-4">Sign in</p>
-    <input type="text" id="defaultLoginForm" class="form-control mb-4" placeholder="Username">
-    <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+    <input [(ngModel)]="username" [ngModelOptions]="{standalone: true}" type="text" id="defaultLoginForm" class="form-control mb-4" placeholder="Username">
+    <input [(ngModel)]="password"  [ngModelOptions]="{standalone: true}"type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
 
     <div class="d-flex justify-content-around">
       <div>
