@@ -11,25 +11,19 @@ import * as jwt_decode from 'jwt-decode';
 export class NavigationComponent implements OnInit {
 
   constructor(private BasketService: BasketService, public DBUtilsService: DBUtilsService) { }
-  Count;
-  search;
-  token = sessionStorage.getItem("token");
+  count;
+  balance;
   ngOnInit(): void {
     this.getCount();
     interval(1000).subscribe(() => {
       this.getCount();
-      console.log(this.token);
-      let tokenInfo = this.getDecodedAccessToken(this.token);
-      console.log(tokenInfo);
+      if(sessionStorage.getItem("token")!=null){
+      this.balance = this.DBUtilsService.getBalance(jwt_decode(sessionStorage.getItem("token")).clientId);
+      console.log(this.balance);}
     });
 
   }
   getCount(){
-    this.Count = this.BasketService.getBooks();
-  }
-  getDecodedAccessToken(token: string): any {
-            return jwt_decode(token);
-
-
+    this.count = this.BasketService.getBooks();
   }
 }

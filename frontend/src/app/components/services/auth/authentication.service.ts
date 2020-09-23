@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {map, tap} from 'rxjs/operators';
-import * as jwt_decode from "jwt-decode";
 
 @Injectable({
   providedIn: 'root'
@@ -18,11 +17,9 @@ export class AuthenticationService {
       .pipe(
         tap(
           userData => {
-
             sessionStorage.setItem('username', username);
             const tokenStr = userData.token;
             sessionStorage.setItem('token', tokenStr);
-
             return userData;
           }
         )
