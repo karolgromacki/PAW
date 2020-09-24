@@ -17,9 +17,8 @@ export class NavigationComponent implements OnInit {
   logged: boolean = false;
   ngOnInit(): void {
     this.AuthenticationService.currentMessage.subscribe(message => this.logged = message)
-    this.getCount();
+    this.BasketService.currentMessage.subscribe(message => this.count = message)
     interval(1000).subscribe(() => {
-      this.getCount();
       if (sessionStorage.getItem("token") != null) {
         console.log(jwt_decode(sessionStorage.getItem("token")).clientId)
         this.DBUtilsService.getBalance(jwt_decode(sessionStorage.getItem("token")).clientId).subscribe(data => {
@@ -33,9 +32,6 @@ export class NavigationComponent implements OnInit {
   }
   logout() {
     this.AuthenticationService.changeMessage(false);
-  }
-  getCount() {
-    this.count = this.BasketService.getBooks();
   }
   reciveMessage($event){
     this.logged=$event;
