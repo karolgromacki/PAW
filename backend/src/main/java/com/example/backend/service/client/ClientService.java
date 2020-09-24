@@ -6,6 +6,7 @@ import com.example.backend.entity.dto.client.ClientDto;
 import com.example.backend.entity.dto.client.ClientShortDto;
 import com.example.backend.repository.ClientRepository;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,10 +19,12 @@ import java.util.stream.Collectors;
 public class ClientService {
     private ClientRepository clientRepository;
     private ModelMapper modelMapper;
+    private PasswordEncoder passwordEncoder;
 
-    public ClientService(ClientRepository clientRepository, ModelMapper modelMapper) {
+    public ClientService(ClientRepository clientRepository, ModelMapper modelMapper, PasswordEncoder passwordEncoder) {
         this.clientRepository = clientRepository;
         this.modelMapper = modelMapper;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public List<ClientShortDto> getListOfClients() {
@@ -38,6 +41,7 @@ public class ClientService {
     }
 
     public ClientDto createClient(ClientDto clientDto) {
+        clientDto.setPassword(passwordEncoder.encode(clientDto.getPassword()));
         Client client = clientRepository.save(dtoToEntityMapper(clientDto));
         return entityToSimpleDTO(client);
     }
