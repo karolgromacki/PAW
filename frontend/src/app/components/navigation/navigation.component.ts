@@ -18,9 +18,8 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
     this.AuthenticationService.currentMessage.subscribe(message => this.logged = message)
     this.BasketService.currentMessage.subscribe(message => this.count = message)
-    interval(1000).subscribe(() => {
+    interval(15000).subscribe(() => {
       if (sessionStorage.getItem("token") != null) {
-        console.log(jwt_decode(sessionStorage.getItem("token")).clientId)
         this.DBUtilsService.getBalance(jwt_decode(sessionStorage.getItem("token")).clientId).subscribe(data => {
           this.balance = data;
         }
