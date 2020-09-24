@@ -16,7 +16,7 @@ export class NavigationComponent implements OnInit {
   logged = false;
   ngOnInit(): void {
     this.getCount();
-    interval(1000).subscribe(() => {
+    interval(15000).subscribe(() => {
       this.getCount();
       if (sessionStorage.getItem("token") != null) {
         this.logged = true;

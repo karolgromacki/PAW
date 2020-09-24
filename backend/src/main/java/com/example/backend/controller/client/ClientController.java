@@ -28,7 +28,7 @@ public class ClientController {
 
     @GetMapping(value = "/client/{id}")
     public ResponseEntity<ClientBalanceDto> getClientAccountBalance(@PathVariable Long id) {
-        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+       User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(clientService.getClientAccountBalance(user.getUsername()));
