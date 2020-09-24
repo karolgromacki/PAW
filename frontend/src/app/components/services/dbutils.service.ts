@@ -28,7 +28,7 @@ export class DBUtilsService {
   getProductsById(id: number): Observable<IProducts> {
     return this.http.get<IProducts>(this.productsByIdUrl + id, {});
   }
-  postEntranceNew(firstName, lastName, email, login, password, address, phoneNumber) {
+  postNewClient(firstName, lastName, email, login, password, address, phoneNumber) {
     return this.http.post<any>(this.clientsUrl, {
       id: 0,
       firstName,

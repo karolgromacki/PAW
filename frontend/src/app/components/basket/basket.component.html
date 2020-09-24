@@ -40,9 +40,13 @@
   <div class="border">
     <div class="text-dark float-right my-4 mr-5">
       <a>Razem: <span class="font-weight-bold">{{suma | currency:' '}} zł</span></a>
-      <button type="button" mdbBtn color="dark" mdbWavesEffect (click) = "payment()">Zapłać</button>
+      <div *ngIf="loggedd; then thenBlock; else elseBlock"></div>
+      <ng-template #thenBlock>
+        <button type="button" mdbBtn color="dark" mdbWavesEffect (click)="payment()">Zapłać</button>
+      </ng-template>
+      <ng-template #elseBlock>
+        <p>Zaloguj się aby zakupić książki</p>
+      </ng-template>
     </div>
   </div>
 </div>
-
-

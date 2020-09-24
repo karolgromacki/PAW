@@ -13,6 +13,6 @@ export class SingUpComponent implements OnInit {
   ngOnInit(): void {
   }
 submit(){
-  this.DButils.postEntranceNew(this.firstName, this.lastName, this.email, this.login, this.password, this.address, this.phoneNumber);
+  this.DButils.postNewClient(this.firstName, this.lastName, this.email, this.login, this.password, this.address, this.phoneNumber);
 }
 }

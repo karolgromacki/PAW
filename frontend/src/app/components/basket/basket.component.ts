@@ -13,12 +13,15 @@ export class BasketComponent implements OnInit {
   bookList: Array<any> = [];
   suma: number = 0;
   pdf: Array<any> = [];
+  loggedd =false;
   ngOnInit(): void {
     this.loadBooks();
-    console.log(this.bookList)
     this.bookList.forEach(book => {
       this.suma += book.price;
     });
+    if(sessionStorage.getItem('token')!=null){
+      this.loggedd=true;
+    }
   }
   loadBooks() {
     this.bookList = this.BasketService.getBooksToBasket();
@@ -30,7 +33,6 @@ export class BasketComponent implements OnInit {
     this.suma = 0;
     this.bookList.forEach(book => {
       this.suma += book.price;
-      console.log(this.suma);
     });
   }
   generatePdf() {
