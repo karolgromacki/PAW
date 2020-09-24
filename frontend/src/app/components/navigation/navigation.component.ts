@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { AuthenticationService } from '../services/auth/authentication.service';
 import { BasketService } from '../services/basket.service';
 import { interval } from 'rxjs';
 import { DBUtilsService } from '../services/dbutils.service';
@@ -10,29 +11,33 @@ import * as jwt_decode from 'jwt-decode';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor(private BasketService: BasketService, public DBUtilsService: DBUtilsService) { }
+  constructor(private BasketService: BasketService, public DBUtilsService: DBUtilsService, private AuthenticationService: AuthenticationService) { }
   count;
   balance;
-  logged = false;
+  logged: boolean = false;
   ngOnInit(): void {
+    this.AuthenticationService.currentMessage.subscribe(message => this.logged = message)
     this.getCount();
-    interval(15000).subscribe(() => {
+    interval(1000).subscribe(() => {
       this.getCount();
       if (sessionStorage.getItem("token") != null) {
-        this.logged = true;
         console.log(jwt_decode(sessionStorage.getItem("token")).clientId)
         this.DBUtilsService.getBalance(jwt_decode(sessionStorage.getItem("token")).clientId).subscribe(data => {
           this.balance = data;
         }
         );
+        console.log(this.balance)
       }
 
     });
   }
-  setlogged() {
-    this.logged = false;
+  logout() {
+    this.AuthenticationService.changeMessage(false);
   }
   getCount() {
     this.count = this.BasketService.getBooks();
+  }
+  reciveMessage($event){
+    this.logged=$event;
   }
 }
