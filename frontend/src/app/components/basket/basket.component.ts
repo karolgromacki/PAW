@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BasketService } from '../services/basket.service';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import { DBUtilsService } from '../services/dbutils.service';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 @Component({
   selector: 'app-basket',
@@ -9,18 +10,21 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
   styleUrls: ['./basket.component.scss']
 })
 export class BasketComponent implements OnInit {
-  constructor(private BasketService: BasketService) { }
+  constructor(private BasketService: BasketService, private Db: DBUtilsService) { }
   bookList: Array<any> = [];
   suma: number = 0;
   pdf: Array<any> = [];
-  loggedd =false;
+  loggedd = false;
+  amount;
   ngOnInit(): void {
+    this.Db.currentMessage.subscribe(message => this.amount = message);
+    console.log(this.amount);
     this.loadBooks();
     this.bookList.forEach(book => {
       this.suma += book.price;
     });
-    if(sessionStorage.getItem('token')!=null){
-      this.loggedd=true;
+    if (sessionStorage.getItem('token') != null) {
+      this.loggedd = true;
     }
   }
   loadBooks() {
@@ -43,11 +47,14 @@ export class BasketComponent implements OnInit {
     pdfMake.createPdf(documentDefinition).open();
   }
   payment() {
-    if (this.suma > 0) {
-      this.generatePdf();
-      this.bookList.length = 0;
-      this.suma = 0;
-      this.BasketService.clearBooks();
+    if (this.suma > 0 && this.amount.accountBalance > 0) {
+      if ((this.amount.accountBalance - this.suma) >= 0) {
+        this.Db.changeMessage({ firstName: "employee", lastName: "one", email: "e1", accountBalance: (this.amount.accountBalance - this.suma) });
+        this.generatePdf();
+        this.bookList.length = 0;
+        this.suma = 0;
+        this.BasketService.clearBooks();
+      }
     }
   }
 }

@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit {
   password = '';
   invalidLogin = false;
   logged=true;
-  constructor(private router: Router, private loginService: AuthenticationService) { }
+  balance;
+  constructor(private router: Router, private loginService: AuthenticationService, private db:DBUtilsService) { }
   @Output() LoggedEvent = new EventEmitter();
   ngOnInit(): void {
 
@@ -29,7 +30,11 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/']);
           this.invalidLogin = false;
           this.sendMessage();
-
+          this.db.getBalance(jwt_decode(sessionStorage.getItem("token")).clientId).subscribe(data => {
+            this.balance = data;
+            this.db.changeMessage(this.balance);
+          }
+          );
         },
         error => this.invalidLogin = true);
 

@@ -4,6 +4,7 @@ import { BasketService } from '../services/basket.service';
 import { interval } from 'rxjs';
 import { DBUtilsService } from '../services/dbutils.service';
 import * as jwt_decode from 'jwt-decode';
+import { delay } from 'rxjs/operators';
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -15,24 +16,27 @@ export class NavigationComponent implements OnInit {
   count;
   balance;
   logged: boolean = false;
-  ngOnInit(): void {
-    this.AuthenticationService.currentMessage.subscribe(message => this.logged = message)
-    this.BasketService.currentMessage.subscribe(message => this.count = message)
-    interval(15000).subscribe(() => {
-      if (sessionStorage.getItem("token") != null) {
-        this.DBUtilsService.getBalance(jwt_decode(sessionStorage.getItem("token")).clientId).subscribe(data => {
-          this.balance = data;
-        }
-        );
-        console.log(this.balance)
+  async ngOnInit(): Promise<void> {
+    this.AuthenticationService.currentMessage.subscribe(message => this.logged = message);
+    this.BasketService.currentMessage.subscribe(message => this.count = message);
+    this.DBUtilsService.currentMessage.subscribe(message => this.balance = message);
+    if (sessionStorage.getItem("token") == null) {
+      await delay(1000);
+    }
+    else {
+      this.DBUtilsService.getBalance(jwt_decode(sessionStorage.getItem("token")).clientId).subscribe(data => {
+        this.balance = data;
+        this.DBUtilsService.changeMessage(this.balance);
       }
+      );
 
-    });
+    }
   }
   logout() {
     this.AuthenticationService.changeMessage(false);
+    this.balance = null;
   }
-  reciveMessage($event){
-    this.logged=$event;
+  reciveMessage($event: boolean) {
+    this.logged = $event;
   }
 }

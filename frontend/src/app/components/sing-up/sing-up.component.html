@@ -31,7 +31,7 @@
 
     <input [(ngModel)] = "address"  [ngModelOptions]="{standalone: true}"type="text" class="form-control" placeholder="Address">
     <!-- Sign up button -->
-    <button  mdbBtn color="info" block="true" class="my-4" type="submit" (click)="submit()">Sign in</button>
+    <button  mdbBtn color="info" block="true" class="my-4" type="submit" (click)="submit()" routerLink="/login">Sign in</button>
   </form>
   <!-- Default form register -->
 </div>

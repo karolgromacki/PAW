@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { IProducts } from '../interfaces/Products';
 import { IClient } from '../Interfaces/Client';
 
@@ -15,7 +15,14 @@ export class DBUtilsService {
   products: IProducts[];
   client: IClient;
   filteredProducts: IProducts[];
+  private messageSource = new BehaviorSubject<any>("");
+  currentMessage = this.messageSource.asObservable();
+
   constructor(private http: HttpClient) {
+  }
+
+  changeMessage(message: any){
+    this.messageSource.next(message)
   }
 
   getProducts(): Observable<IProducts[]> {

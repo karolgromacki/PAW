@@ -35,18 +35,25 @@
     <form class="form-inline my-2 my-lg-0 ml-auto">
       <div class="md-form my-0">
         <ul class="navbar-nav mr-auto">
-          <li>
-            <div *ngIf="logged; then thenBlock; else elseBlock"></div>
-            <ng-template #thenBlock>
-              <p class="btn btn-outline-light btn-sm ml-0" type="submit" (click)="logout()" routerLink="/logout">Logout</p>
-            </ng-template>
-            <ng-template #elseBlock>
-              <p class="btn btn-outline-light btn-sm ml-0" type="submit" routerLink="/login" routerLinkActive="active">
-                Sign in</p>
-            </ng-template>
+
+          <div *ngIf="logged; then thenBlock; else elseBlock"></div>
+          <ng-template #thenBlock>
+            <li>
+              <p *ngIf="balance" class="btn btn-light btn-sm ml-0">Dostępne środki:
+                {{balance.accountBalance | currency:' '}} zł</p>
+            </li>
+            <li>
+              <p class="btn btn-outline-light btn-sm ml-0" type="submit" (click)="logout()" routerLink="/logout">Logout
+              </p>
+            </li>
+          </ng-template>
+          <ng-template #elseBlock>
+            <p class="btn btn-outline-light btn-sm ml-0" type="submit" routerLink="/login" routerLinkActive="active">
+              Sign in</p>
+          </ng-template>
 
 
-          </li>
+
           <li>
             <p class="btn btn-outline-light btn-sm ml-0" routerLink="/basket" type="submit">
               Koszyk
