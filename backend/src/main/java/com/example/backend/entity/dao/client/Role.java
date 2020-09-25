@@ -35,12 +35,17 @@ public class Role extends BaseEntity implements GrantedAuthority {
         this.name = name;
     }
 
+
+    public void addClient(Client client) {
+        this.clients.add(client);
+    }
+
     public Collection<Client> getClients() {
         return clients;
     }
 
     public void setClients(Collection<Client> clients) {
-        this.clients = clients;
+        this.clients.addAll(clients);
     }
 
     public Collection<Privilege> getPrivileges() {

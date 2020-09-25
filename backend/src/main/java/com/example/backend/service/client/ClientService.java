@@ -1,14 +1,17 @@
 package com.example.backend.service.client;
 
 import com.example.backend.entity.dao.client.Client;
+import com.example.backend.entity.dao.client.Role;
 import com.example.backend.entity.dto.client.ClientBalanceDto;
 import com.example.backend.entity.dto.client.ClientDto;
 import com.example.backend.entity.dto.client.ClientShortDto;
 import com.example.backend.repository.ClientRepository;
+import com.example.backend.repository.RoleRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,11 +23,13 @@ public class ClientService {
     private ClientRepository clientRepository;
     private ModelMapper modelMapper;
     private PasswordEncoder passwordEncoder;
+    private RoleRepository roleRepository;
 
-    public ClientService(ClientRepository clientRepository, ModelMapper modelMapper, PasswordEncoder passwordEncoder) {
+    public ClientService(ClientRepository clientRepository, ModelMapper modelMapper, PasswordEncoder passwordEncoder, RoleRepository roleRepository) {
         this.clientRepository = clientRepository;
         this.modelMapper = modelMapper;
         this.passwordEncoder = passwordEncoder;
+        this.roleRepository = roleRepository;
     }
 
     public List<ClientShortDto> getListOfClients() {
@@ -40,10 +45,15 @@ public class ClientService {
         return modelMapper.map(client, ClientBalanceDto.class);
     }
 
+    @Transactional
     public ClientDto createClient(ClientDto clientDto) {
         clientDto.setPassword(passwordEncoder.encode(clientDto.getPassword()));
         Client client = clientRepository.save(dtoToEntityMapper(clientDto));
-        return entityToSimpleDTO(client);
+        List<Role> defaultRoles = roleRepository.getDefaultRoles();
+        client.setRoles(defaultRoles);
+        defaultRoles.forEach(r -> r.addClient(client));
+        roleRepository.saveAll(defaultRoles);
+        return entityToSimpleDTO(clientRepository.save(client));
     }
 
     public ClientDto updateClient(ClientDto clientDto) {
