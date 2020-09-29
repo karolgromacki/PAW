@@ -6,7 +6,7 @@ import com.example.backend.entity.dto.BaseDto;
 import java.util.Date;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 public class PaymentShortDto extends BaseDto {
 

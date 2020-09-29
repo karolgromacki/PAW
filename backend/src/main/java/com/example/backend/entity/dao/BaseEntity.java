@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 @MappedSuperclass
 public class BaseEntity implements Serializable {

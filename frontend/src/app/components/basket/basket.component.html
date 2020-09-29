@@ -2,51 +2,56 @@
   <h3 class="text-dark card-header text-center font-weight-bold text-uppercase py-4">
     Koszyk
   </h3>
-  <div class="card-body mx-lg-5 px-lg-5">
-    <div id="table" class="table-editable " id="content" #content>
-      <table responsive="true" small="true" striped="true"
-        class="table table-bordered table-responsive-md table-striped text-center">
-        <thead class="black white-text">
-          <tr>
-            <th class="text-center">Author</th>
-            <th class="text-center">Title</th>
-            <th class="text-center">Price</th>
-            <th class="text-center">Remove</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let book of bookList; let id = index">
-            <td class="align-middle">{{ book.author }}
-            </td>
-            <td class="align-middle">
-              {{ book.title }}
-            </td>
-            <td class="align-middle">
-              {{ book.price | currency:' '}} zł
-            </td>
-            <td class="align-middle">
-              <span class="table-remove">
-                <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0 py-1 px-2"
-                  (click)="remove(id)">
-                  x
-                </button>
-              </span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+  <div *ngIf="suma==0" class="grey-text text-center p-5 mt-4 mb-5">
+  <h1  class="grey-text text-center p-5 m-5">Koszyk jest pusty :(</h1></div>
+  <div *ngIf="suma!=0" class="m-5 ">
+    <div class="card-body mx-lg-5 px-lg-5">
+      <div id="table" class="table-editable " id="content" #content>
+        <table responsive="true" small="true" striped="true"
+          class="table table-bordered table-responsive-md table-striped text-center">
+          <thead class="black white-text">
+            <tr>
+              <th class="text-center">Autor</th>
+              <th class="text-center">Tytuł</th>
+              <th class="text-center">Cena</th>
+              <th class="text-center">Usuń</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let book of bookList; let id = index">
+              <td class="align-middle">{{ book.author }}
+              </td>
+              <td class="align-middle">
+                {{ book.title }}
+              </td>
+              <td class="align-middle">
+                {{ book.price | currency:' '}} zł
+              </td>
+              <td class="align-middle">
+                <span class="table-remove">
+                  <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0 py-1 px-2"
+                    (click)="remove(id)">
+                    x
+                  </button>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
-  <div class="border">
-    <div class="text-dark float-right my-4 mr-5">
-      <a>Razem: <span class="font-weight-bold">{{suma | currency:' '}} zł</span></a>
-      <div *ngIf="loggedd; then thenBlock; else elseBlock"></div>
-      <ng-template #thenBlock>
-        <button type="button" mdbBtn color="dark" mdbWavesEffect (click)="payment()">Zapłać</button>
-      </ng-template>
-      <ng-template #elseBlock>
-        <p>Zaloguj się aby zakupić książki</p>
-      </ng-template>
+    <div class="border">
+      <div class="text-dark float-right my-4 mr-5">
+        <a>Razem: <span class="font-weight-bold">{{suma | currency:' '}} zł</span></a>
+        <div *ngIf="loggedd; then thenBlock; else elseBlock"></div>
+        <ng-template #thenBlock>
+          <button type="button" mdbBtn color="dark" mdbWavesEffect (click)="payment()">Zapłać</button>
+        </ng-template>
+        <ng-template #elseBlock>
+          <p>Zaloguj się aby zakupić książki</p>
+        </ng-template>
+      </div>
     </div>
   </div>
 </div>
+<app-footer></app-footer>

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 @RestController
 @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)

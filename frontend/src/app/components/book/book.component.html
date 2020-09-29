@@ -7,13 +7,14 @@
         <h1 *ngIf="product">{{product.productName}}</h1>
       </div>
       <div class="m-5">
-          <h1 *ngIf="product">{{product.price | currency:' '}}zł</h1>
-          <button mdbPopover="Dodano książkę." placement="bottom" triggers="focus" class="btn btn-primary" (click)="onClick(product.author, product.price, product.productName);">Dodaj do koszyka</button>
+        <h1 *ngIf="product">{{product.price | currency:' '}}zł</h1>
+        <button mdbPopover="Dodano książkę." placement="bottom" triggers="focus" class="btn btn-primary"
+          (click)="onClick(product.author, product.price, product.productName);">Dodaj do koszyka<i class="demo-icon icon-plus"></i></button>
       </div>
     </div>
     <div class="col-12 mt-5">
-        <h1>Opis:</h1>
-        <p *ngIf="product">{{product.description}}</p>
+      <h1>Opis:</h1>
+      <p *ngIf="product">{{product.description}}</p>
     </div>
   </div>
 </div>

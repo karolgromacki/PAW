@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 @Entity
 @Table(name = "role")

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)

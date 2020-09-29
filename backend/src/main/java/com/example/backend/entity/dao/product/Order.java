@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 @Entity
 @Table(name = "orders")

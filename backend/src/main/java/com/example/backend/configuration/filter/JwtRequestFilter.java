@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 @Component
 public class JwtRequestFilter extends OncePerRequestFilter {

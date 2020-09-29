@@ -1,7 +1,7 @@
 package com.example.backend.entity.dao.enums;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 public enum DiscountType {
     NEw, BESTSELLER, DISCOUNTED;

@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 public interface PaymentRepository extends JpaRepository<Payment, Long> {
 

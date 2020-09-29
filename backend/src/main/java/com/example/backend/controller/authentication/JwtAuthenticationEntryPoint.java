@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.Serializable;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 @Component
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Serializable {

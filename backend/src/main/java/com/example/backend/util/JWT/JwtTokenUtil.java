@@ -17,7 +17,7 @@ import java.util.Map;
 import java.util.function.Function;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 @Component
 public class JwtTokenUtil implements Serializable {

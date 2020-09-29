@@ -1,16 +1,14 @@
-<div class="col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+<div class="col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 mt-5">
   <form class="text-center p-5">
 
-    <p class="h4 mb-4">Sign in</p>
-    <input [(ngModel)]="username" [ngModelOptions]="{standalone: true}" type="text" id="defaultLoginForm" class="form-control mb-4" placeholder="Username">
-    <input [(ngModel)]="password"  [ngModelOptions]="{standalone: true}"type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+    <p class="h4 mb-4">Zaloguj się</p>
+    <input [(ngModel)]="username" [ngModelOptions]="{standalone: true}" type="text" id="defaultLoginForm" class="form-control mb-4" placeholder="login">
+    <input [(ngModel)]="password"  [ngModelOptions]="{standalone: true}"type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="hasło">
 
     <!-- Sign in button -->
-    <button type="button" mdbBtn color="primary" mdbWavesEffect (click)="checkLogin()" class="my-4 mx-1 py-1 px-5">Sign
-      in
+    <button type="button" mdbBtn color="primary" mdbWavesEffect (click)="checkLogin()" class="my-4 mx-1 py-1 px-5">Zaloguj się
     </button>
-    <button type="button" mdbBtn color="success" mdbWavesEffect routerLink="/signup" class="my-4 mx-1 py-1 px-5">Sign
-      up
+    <button type="button" mdbBtn color="success" mdbWavesEffect routerLink="/signup" class="my-4 mx-1 py-1 px-5">Zarejstruj się
     </button>
   </form>
 </div>

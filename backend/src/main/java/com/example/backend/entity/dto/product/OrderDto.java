@@ -7,7 +7,7 @@ import com.example.backend.entity.dto.client.PaymentShortDto;
 import java.util.Date;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 public class OrderDto extends BaseDto {
 

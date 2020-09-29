@@ -7,7 +7,7 @@ import com.example.backend.entity.dto.product.ProductDto;
 import java.util.List;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 public class BasketDto extends BaseDto {
 

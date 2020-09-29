@@ -3,7 +3,7 @@ package com.example.backend.util.model;
 import java.io.Serializable;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 public class JwtCredentials implements Serializable {
 

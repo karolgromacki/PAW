@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 @Service
 public class ProductService {

@@ -8,7 +8,7 @@ import javax.persistence.Table;
 import java.util.Collection;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 @Entity
 @Table(name = "privilege")

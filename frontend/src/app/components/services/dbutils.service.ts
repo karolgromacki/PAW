@@ -12,11 +12,13 @@ export class DBUtilsService {
   private clientsUrl = 'http://localhost:8080/clients';
   private clientBalance = 'http://localhost:8080/client/';
   private productsByIdUrl = 'http://localhost:8080/product/';
+  private paymentUrl = 'http://localhost:8080/payments';
   products: IProducts[];
   client: IClient;
   filteredProducts: IProducts[];
   private messageSource = new BehaviorSubject<any>("");
   currentMessage = this.messageSource.asObservable();
+
 
   constructor(private http: HttpClient) {
   }
@@ -35,6 +37,15 @@ export class DBUtilsService {
   getProductsById(id: number): Observable<IProducts> {
     return this.http.get<IProducts>(this.productsByIdUrl + id, {});
   }
+  postNewPayment(amount, date, id){
+    return this.http.post<any>(this.paymentUrl, {
+      amount: amount,
+      date: date,
+      id: id,
+      paymentType: 1
+    });
+  }
+
   postNewClient(firstName, lastName, email, login, password, address, phoneNumber) {
     return this.http.post<any>(this.clientsUrl, {
       id: 0,

@@ -1,7 +1,7 @@
 package com.example.backend.entity.dto.client;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 public class ClientBalanceDto {
     private String firstName;

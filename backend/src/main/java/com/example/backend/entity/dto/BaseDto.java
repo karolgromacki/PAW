@@ -4,7 +4,7 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 public abstract class BaseDto implements Serializable {
 

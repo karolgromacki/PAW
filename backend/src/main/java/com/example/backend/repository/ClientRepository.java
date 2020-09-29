@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 public interface ClientRepository extends JpaRepository<Client, Long> {
 

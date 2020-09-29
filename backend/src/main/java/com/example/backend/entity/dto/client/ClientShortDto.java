@@ -3,7 +3,7 @@ package com.example.backend.entity.dto.client;
 import com.example.backend.entity.dto.BaseDto;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 public class ClientShortDto extends BaseDto {
     private String firstName;

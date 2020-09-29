@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 import java.util.List;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 public class ClientDto extends BaseDto {
     private String firstName;

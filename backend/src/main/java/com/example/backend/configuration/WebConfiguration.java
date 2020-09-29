@@ -25,7 +25,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import javax.sql.DataSource;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 @Configuration
 @EnableWebMvc

@@ -13,7 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 @RestController
 @CrossOrigin

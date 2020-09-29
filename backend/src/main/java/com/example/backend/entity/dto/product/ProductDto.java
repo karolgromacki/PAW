@@ -7,7 +7,7 @@ import com.example.backend.entity.dto.BaseDto;
 import javax.persistence.Enumerated;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 public class ProductDto extends BaseDto {
     private String productName;

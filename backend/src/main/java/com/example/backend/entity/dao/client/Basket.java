@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.List;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 @Entity
 @Table(name = "baskets")

@@ -9,7 +9,7 @@ import javax.validation.constraints.Min;
 import java.util.Date;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 @Entity
 @Table(name = "payments")

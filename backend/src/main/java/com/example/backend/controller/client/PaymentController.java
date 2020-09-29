@@ -1,7 +1,7 @@
 package com.example.backend.controller.client;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 
 import com.example.backend.entity.dto.client.PaymentShortDto;

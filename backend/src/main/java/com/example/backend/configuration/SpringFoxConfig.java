@@ -9,7 +9,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 @Configuration
 @EnableSwagger2

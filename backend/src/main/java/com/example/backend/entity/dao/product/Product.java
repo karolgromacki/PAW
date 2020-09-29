@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 import java.util.List;
 
 /*
-    @author Kacper Buczak 
+    @author Karol Gromacki 
 */
 @Entity
 @Table(name = "products")

@@ -1,6 +1,6 @@
 <nav class="sticky-top navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" routerLink="">
-    Książki
+    Książki <i class="demo-icon icon-book"></i>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,19 +43,19 @@
                 {{balance.accountBalance | currency:' '}} zł</p>
             </li>
             <li>
-              <p class="btn btn-outline-light btn-sm ml-0" type="submit" (click)="logout()" routerLink="/logout">Logout
+              <p class="btn btn-outline-light btn-sm ml-0" type="submit" (click)="logout()" routerLink="/logout">Wyloguj
               </p>
             </li>
           </ng-template>
           <ng-template #elseBlock>
             <p class="btn btn-outline-light btn-sm ml-0" type="submit" routerLink="/login" routerLinkActive="active">
-              Sign in</p>
+              Zaloguj</p>
           </ng-template>
 
 
 
           <li>
-            <p class="btn btn-outline-light btn-sm ml-0" routerLink="/basket" type="submit">
+            <p class="btn btn-outline-light btn-sm ml-0" routerLink="/basket" type="submit"><i class="demo-icon icon-basket"></i>
               Koszyk
               <span style="color:red">({{count}})
               </span>
