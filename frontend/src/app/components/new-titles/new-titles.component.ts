@@ -18,6 +18,6 @@ export class NewTitlesComponent implements OnInit {
 
   onClick(author, title, price) {
     this.BasketService.add(author, title, price);
-    console.log(this.BasketService.books)
+    this.BasketService.changeMessage(this.BasketService.books.length);
   }
 }

@@ -16,12 +16,14 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this.DBUtils.getProducts().subscribe(data => {this.products = data;
       this.filteredProducts = this.products;
-      });  }
+      });}
   reciveMessage($event){
     this.filteredProducts=$event;
   }
   onClick(author, title, price) {
     this.BasketService.add(author, title, price);
+    this.BasketService.changeMessage(this.BasketService.books.length);
+    console.log(this.products)
   }
 
 }

@@ -22,5 +22,6 @@ export class BookComponent implements OnInit {
   }
   onClick(author, title, price) {
     this.BasketService.add(author, title, price);
+    this.BasketService.changeMessage(this.BasketService.books.length);
   }
 }

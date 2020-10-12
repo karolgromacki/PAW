@@ -36,6 +36,7 @@ export class BasketComponent implements OnInit {
   remove(id: any) {
     this.bookList.splice(id, 1);
     this.BasketService.setBooks(this.bookList);
+    this.BasketService.changeMessage(this.bookList.length);
     this.suma = 0;
     this.bookList.forEach(book => {
       this.suma += book.price;

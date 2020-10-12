@@ -23,15 +23,15 @@ export class DBUtilsService {
   constructor(private http: HttpClient) {
   }
 
-  changeMessage(message: any){
-    this.messageSource.next(message)
-  }
-
   getProducts(): Observable<IProducts[]> {
     return this.http.get<IProducts[]>(this.productsUrl, {});
   }
   getBalance(id : string): Observable<IClient> {
   return this.http.get<IClient>(this.clientBalance + id, {});
+  }
+
+  changeMessage(message: any){
+    this.messageSource.next(message)
   }
 
   getProductsById(id: number): Observable<IProducts> {
@@ -42,7 +42,7 @@ export class DBUtilsService {
       amount: amount,
       date: date,
       id: id,
-      paymentType: 1
+      paymentType: 'PAYMENT_TYPE_1'
     });
   }
 

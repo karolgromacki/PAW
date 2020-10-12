@@ -22,6 +22,7 @@ export class BestsellersComponent implements OnInit {
   }
   onClick(author, title, price) {
     this.BasketService.add(author, title, price);
+    this.BasketService.changeMessage(this.BasketService.books.length);
   }
   reciveMessage($event){
     this.filteredProducts=$event;
